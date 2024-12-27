@@ -15,12 +15,12 @@ export class Service {
     this.bucket = new Storage(this.client);
   }
 
-  async createProduct({ Product_Title, Product_Id, Description, Cover_Img, Review_Id, Book_Type ,Price:[],Tags:[], }) {
+  async createProduct({ Product_Title, Description, Cover_Img, Review_Id, Book_Type ,Price:[],Tags:[], }) {
     try {
       return await this.databases.createDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId1,
-        Product_Id,
+        ID.unique(),
         {
           Product_Title,
           Description,
@@ -40,7 +40,7 @@ export class Service {
     try {
       return await this.databases.updateDocument(
         conf.appwriteDatabaseId,
-        conf.appwriteCollectionId,
+        conf.appwriteCollectionId1,
         Product_Id,
         {
           Product_Title,
@@ -70,6 +70,7 @@ export class Service {
       return false;
     }
   }
+
 
 
   async getProduct(Product_Id) {
