@@ -7,8 +7,8 @@ import store from './store/store.js'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import {Login } from './components/index.js'
-import Signup from './pages/Signup'
-
+import Signup from "./components/Signup.jsx"
+import ProductForm from "./components/productform/Productform.jsx"
 
 const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     children: [
         {
             path: "/",
-            element: <Home />,
+            element: <ProductForm />,
         },
         {
             path: "/login",
@@ -29,9 +29,9 @@ const router = createBrowserRouter([
         {
             path: "/signup",
             element: (
-                <AuthLayout authentication={false}>
+               
                     <Signup />
-                </AuthLayout>
+               
             ),
         },
        
