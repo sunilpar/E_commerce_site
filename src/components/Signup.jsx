@@ -27,9 +27,9 @@ function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen ">
+    <div className="flex items-center justify-center h-screen text-iphone-white ">
       <div
-        className={`mx-auto w-full max-w-lg bg-gray-300 rounded-xl p-10 border border-black/10`}
+        className={`mx-auto w-full max-w-lg rounded-xl p-10  ` }
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]"></span>
@@ -51,14 +51,14 @@ function Signup() {
         <form onSubmit={handleSubmit(create)}>
           <div className="space-y-5">
             <Input
-              label="Full Name: "
+              label="  "
               placeholder="Enter your full name"
               {...register("name", {
                 required: true,
               })}
             />
             <Input
-              label="Email: "
+              label=" "
               placeholder="Enter your email"
               type="email"
               {...register("email", {
@@ -71,7 +71,7 @@ function Signup() {
               })}
             />
             <Input
-              label="Password: "
+              label=" "
               type="password"
               placeholder="Enter your password"
               {...register("password", {
@@ -79,7 +79,7 @@ function Signup() {
               })}
             />
 
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full bg-iphone-black text-iphone-white hover:bg-iphone-white hover:text-iphone-black duration-150 hover:duration-150 ">
               Create Account
             </Button>
           </div>

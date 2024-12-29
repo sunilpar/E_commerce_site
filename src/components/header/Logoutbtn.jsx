@@ -12,7 +12,7 @@ function LogoutBtn() {
         navigate("/")
     }
   return (
-    <button className='inline-bock px-4 py-2 hover:duration-150 text-gov-gray hover:bg-gov-gray hover:text-black duration-200 rounded-lg' onClick={logoutHandler}>Logout</button>
+    <button className='inline-bock px-4 py-2  bg-iphone-black text-iphone-white hover:bg-iphone-white hover:text-iphone-black duration-150 hover:duration-150 rounded-lg' onClick={logoutHandler}>Logout</button>
   )
 }
 

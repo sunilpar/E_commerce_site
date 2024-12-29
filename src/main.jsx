@@ -9,6 +9,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import {Login } from './components/index.js'
 import Signup from "./components/Signup.jsx"
 import ProductForm from "./components/productform/Productform.jsx"
+import Home from "./pages/Home.jsx"
+import Cart from "./pages/Cart.jsx"
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
     children: [
         {
             path: "/",
+            element: <Home />,
+        },
+        {
+            path: "/cart",
+            element: <Cart />,
+        },
+        {
+            path: "/Addproduct",
             element: <ProductForm />,
         },
         {

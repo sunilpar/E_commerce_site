@@ -1,13 +1,12 @@
-import React, { useCallback } from "react";
+import React, { useCallback,useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input } from "../index";
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import parse  from "html-react-parser";
 
 export default function ProductForm({ product}) {
-    const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
+    const { register, handleSubmit} = useForm({
         defaultValues: {
             Product_Title: product?.Product_Title || "",
             Description: product?.Description || "",
@@ -20,60 +19,56 @@ export default function ProductForm({ product}) {
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
     
-    
-
     const submit = async (data) => {
-        console.log(data.Tags);
-        function hashtimmer(data){
-            const input=data.Tags;
-            return input
-            .split(" ")
-            .filter((part) => part.startsWith("#") && part.trim() !== "");
-        }
-        const updatedtags= hashtimmer(data);
-
-
+        
+    
+       
+        // function stringToArray(input) {
+        //     return input ? input.match(/#[^\s#]+(?:\s[^\s#]+)*/g) || [] : [];
+        // }
+    
+       
+        // const updatedTags = stringToArray(data.Tags);
+        // data.Tags = updatedTags; 
+    
+        
+    
         if (product) {
-            const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
-            
-            data.Tags=updatedtags;
-            console.log(data.Tags);
-            console.log(updatedtags);
-
+            const file = data.image?.[0] ? await appwriteService.uploadFile(data.image[0]) : null;
+    
             if (file) {
                 appwriteService.deleteFile(product.Cover_Img);
             }
-
+    
             const dbPost = await appwriteService.updateProduct(product.$id, {
                 ...data,
                 Cover_Img: file ? file.$id : undefined,
                 Price: parseFloat(data.Price),
-                
             });
-            console.log(typeof data.Price);
-
+    
             if (dbPost) {
-                console.log(dbPost);
-                // navigate(`/product/${dbPost.$id}`);
+                console.log("Updated Product:", dbPost);
             }
         } else {
-            const file = await appwriteService.uploadFile(data.image[0]);
+            const file = await appwriteService.uploadFile(data.image?.[0]);
             if (file) {
-                const fileId = file.$id;
-                data.Cover_Img = fileId;
-                const dbPost = await appwriteService.createProduct({ ...data,
+                data.Cover_Img = file.$id;
+                const dbPost = await appwriteService.createProduct({
+                    ...data,
                     Price: parseFloat(data.Price),
-                    Tags: data.Tags,
                 });
-                
-                
+    
+                // console.log("Created Product Data Sent to Appwrite:", data); 
+                // console.log("Created Product Response:", dbPost); 
+    
                 if (dbPost) {
-                    console.log(dbPost);
                     alert("Product created successfully");
                 }
             }
         }
     };
+    
+
 
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">

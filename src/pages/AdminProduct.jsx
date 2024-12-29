@@ -3,7 +3,7 @@ import { ProductForm } from '../components'
 
 function AdminProduct() {
   return (
-    <div>
+    <div className='bg-full-white'>
       <ProductForm />
     </div>
   )

@@ -7,6 +7,7 @@ const conf = {
     appwriteBucketId1: String(import.meta.env.VITE_APPWRITE_BUCKET1_ID),
     appwriteBucketId2: String(import.meta.env.VITE_APPWRITE_BUCKET2_ID),
     tinyMCEApiKey: String(import.meta.env.VITE_TINYMCE_API_KEY),
+    adminId: String(import.meta.env.VITE_ADMIN_ID)
 
 }
 

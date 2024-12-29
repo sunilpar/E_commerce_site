@@ -29,9 +29,9 @@ function Login() {
 
   return (
     <div
-    className='flex items-center justify-center w-full h-screen'
+    className='flex items-center justify-center w-full h-screen text-iphone-white'
     >
-        <div className={`mx-auto w-full max-w-lg bg-gray-300 rounded-xl p-10 border border-black/10`}>
+        <div className={`mx-auto w-full max-w-lg  rounded-xl p-10`}>
         <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                        
@@ -51,7 +51,7 @@ function Login() {
         <form onSubmit={handleSubmit(login)} className='mt-8'>
             <div className='space-y-5'>
                 <Input
-                label="Email: "
+                label=" "
                 placeholder="Enter your email"
                 type="email"
                 {...register("email", {
@@ -63,7 +63,7 @@ function Login() {
                 })}
                 />
                 <Input
-                label="Password: "
+                label=" "
                 type="password"
                 placeholder="Enter your password"
                 {...register("password", {
@@ -72,7 +72,7 @@ function Login() {
                 />
                 <Button
                 type="submit"
-                className="w-full"
+                className="w-full  bg-iphone-black text-iphone-white hover:bg-iphone-white hover:text-iphone-black duration-150 hover:duration-150"
                 >Sign in</Button>
             </div>
         </form>
