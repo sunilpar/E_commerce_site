@@ -2,17 +2,15 @@ import React, { useEffect } from "react";
 import appwriteService from "../appwrite/config";
 import { Link } from "react-router-dom";
 import Button from "./Button";
-import { addToCart } from "../store/cart.js";
+import { addToCart } from "../store/cartslice.js";
 import { useSelector, useDispatch } from "react-redux";
-function Book({ $id, Product_Title, Cover_Img, Price }) {
+function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
   const title = Product_Title;
   const fileid = Cover_Img;
-  const id = $id;
-  const dispatch = useDispatch();
-
-  const handleCart = ($id) => {
-    dispatch(addToCart($id));
-    console.log($id);
+  const id = Product_Id;
+  const dispatch = useDispatch(); 
+   const handleCart = (id) => {
+     dispatch(addToCart(id));
   };
 
   return (
@@ -31,7 +29,7 @@ function Book({ $id, Product_Title, Cover_Img, Price }) {
                 {title || "Untitled"} <br />
               </h3>
 
-              <h3 class="z-10 mt-3 mb-3 flex text-sm italic thin font-bold text-iphone-white">
+              <h3 class="z-10 mt-3 mb-3 flex text-sm italic thin font-extralight text-iphone-white">
                 Rs {Price || "Untitled"} <br />
                 <div className="pl-3 pr-1">
                   <svg

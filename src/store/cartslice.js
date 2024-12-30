@@ -9,9 +9,13 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
+            if (state.productIds.includes(action.payload)) return;
             const productId = action.payload;
-            if (!state.productIds.includes(productId)) {
+            if(state.productIds.length > 0){
+
                 state.productIds.push(productId);
+            }else{
+                state.productIds = [productId];
             }
         },
         removeFromCart: (state, action) => {
@@ -23,10 +27,6 @@ const cartSlice = createSlice({
         }
     }
 });
-
-// Selectors
-export const selectCartNo = (state) => state.cart.productIds.length + 1;
-
 export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
