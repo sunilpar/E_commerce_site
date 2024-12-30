@@ -14,7 +14,7 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
   };
 
   return (
-    <Link to={`/`}>
+    <div >
       <div className="w-[220px] h-[400px] overflow-hidden rounded-lg p-2 flex items-center flex-col">
         <div className="w-[210px] h-[300px]   mb-7  ">
           {fileid ? (
@@ -25,6 +25,15 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
                 alt=""
               />
               <div class="absolute inset-0 bg-gradient-to-t from-full-black via-gray-900/40"></div>
+              <Link to={`/post/${id}`}className="z-11 mt-1 text-sm absolute right-0  bottom-[120px] flex flex-row text-iphone-white rounded-xl px-1 py-1 hover:bg-iphone-black hover:duration-400 ">
+                <div className="bold opacity-0 hover:opacity-100  hover:duration-200 ">
+                  Details
+                </div>
+                
+                <div className="">
+                  <svg width="20px" height="20px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#F5F5F7"></path></g></svg>
+                </div>
+              </Link>
               <h3 class="z-10 mt-3 flex  text-lg bold align-left font-bold text-iphone-white">
                 {title || "Untitled"} <br />
               </h3>
@@ -69,6 +78,7 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
                   </svg>
                 </div>
                 <div>4.5</div>
+
                 <button
                   className="ml-6 rounded-lg px-[5px] py-[2px]  bg-iphone-black text-iphone-white hover:bg-full-black hover:text-iphone-black duration-150 hover:duration-150"
                   onClick={() => handleCart(id)}
@@ -109,14 +119,13 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
                   </svg>
                 </button>
               </h3>
-              <div></div>
             </article>
           ) : (
             <div className="">No Image Available</div>
           )}
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 
