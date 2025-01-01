@@ -5,18 +5,23 @@ import Button from "./Button";
 import Select from "./Select.jsx";
 import { removeFromCart,clearCart } from "../store/cartslice.js";
 import { useSelector, useDispatch } from "react-redux";
-function CartItem({ Product_Title, Cover_Img, Price ,Product_Id }) {
-  const title = Product_Title;
-  const fileid = Cover_Img;
-  const id = Product_Id;
-  const prod_id=Product_Id;
+import Cart from "../pages/cart.jsx";
+import { use } from "react";
+
+
+function CartItem({ product }) {
+  const title = product.Product_Title;
+  const fileid =product.Cover_Img;
+  const id = product.Product_Id;
+  const [cartId , setCartId] = useState(id);
   const dispatch = useDispatch();
+
   const removeHandler=(id)=> {
     dispatch(removeFromCart(id));
   }
 
 
-  return (
+  return product? (
     <div className=" mb-6 flex justify-start md:justify-center flex-wrap gap-7  ">
       <Link to={`/post/${id}`} className="flex flex-row  h-fit">
         <img
@@ -30,7 +35,6 @@ function CartItem({ Product_Title, Cover_Img, Price ,Product_Id }) {
         {/* ttile section */}
         <div className="  w-[500px] flex  text-3xl sm:text-4xl font-extrabold mb-6 ">
           {title}
-          {/* asdasdasdasdasd dsadasdashjkdhaksjhd asdjhakjshdkjashdkjas askdhkasjhdkajshdkjahs */}
         </div>
 
         {/* select section */}
@@ -43,27 +47,27 @@ function CartItem({ Product_Title, Cover_Img, Price ,Product_Id }) {
 
         {/* price section */}
         <div className=" text-md italic thin  flex justify-start mb-6">
-          Rs {Price}
+          Rs {product.Price}
           <div className="pl-3 pr-1">
             <svg
               className="w-[20px] h-[20px]"
               version="1.0"
               id="Layer_1"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               width="64px"
               height="64px"
               viewBox="0 0 64 64"
-              enable-background="new 0 0 64 64"
-              xml:space="preserve"
+              enableBackground="new 0 0 64 64"
+              xmlSpace="preserve"
               fill="#F5F5F7"
               stroke="#F5F5F7"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
@@ -93,15 +97,15 @@ function CartItem({ Product_Title, Cover_Img, Price ,Product_Id }) {
               viewBox="0 0 32 32"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              xmlnssketch="http://www.bohemiancoding.com/sketch/ns"
               fill=""
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
@@ -110,9 +114,9 @@ function CartItem({ Product_Title, Cover_Img, Price ,Product_Id }) {
                 <g
                   id="Page-1"
                   stroke="none"
-                  stroke-width="1"
+                  strokeWidth="1"
                   fill="none"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   sketch:type="MSPage"
                 >
                   {" "}
@@ -143,15 +147,15 @@ function CartItem({ Product_Title, Cover_Img, Price ,Product_Id }) {
               viewBox="0 0 32 32"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              xmlnssketch="http://www.bohemiancoding.com/sketch/ns"
               fill="#000000"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
@@ -160,9 +164,9 @@ function CartItem({ Product_Title, Cover_Img, Price ,Product_Id }) {
                 <g
                   id="Page-1"
                   stroke="none"
-                  stroke-width="1"
+                  strokeWidth="1"
                   fill="none"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   sketch:type="MSPage"
                 >
                   {" "}
@@ -194,14 +198,15 @@ function CartItem({ Product_Title, Cover_Img, Price ,Product_Id }) {
             Buy Now
           </Button>
 
-
-          <button  className="ml-[8rem] hover:scale-105">
-          <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#F5F5F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#F5F5F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#F5F5F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#F5F5F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#F5F5F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+          <button onClick={() => removeHandler(id)} className="ml-[8rem] hover:scale-105">
+            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#F5F5F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M14 12V17" stroke="#F5F5F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M4 7H20" stroke="#F5F5F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#F5F5F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#F5F5F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
           </button>
         </div>
       </div>
     </div>
-  );
+  ):(<div>
+    No item in cart
+  </div>);
 }
 
 export default CartItem;

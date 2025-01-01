@@ -18,27 +18,21 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
       <div className="w-[220px] h-[400px] overflow-hidden rounded-lg p-2 flex items-center flex-col">
         <div className="w-[210px] h-[300px]   mb-7  ">
           {fileid ? (
-            <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-lg p-6 pt-60 pb-8  max-w-sm mx-auto mt-2     ">
+            <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-lg p-6 pt-60 pb-8  max-w-sm mx-auto mt-2     ">
               <img
                 className="absolute inset-0 h-full w-full object-cover"
                 src={appwriteService.getFilePreview(fileid)}
                 alt=""
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-full-black via-gray-900/40"></div>
-              <Link to={`/post/${id}`}className="z-11 mt-1 text-sm absolute right-0  bottom-[120px] flex flex-row text-iphone-white rounded-xl px-1 py-1 hover:bg-iphone-black hover:duration-400 ">
-                <div className="bold opacity-0 hover:opacity-100  hover:duration-200 ">
-                  Details
-                </div>
-                
-                <div className="">
-                  <svg width="20px" height="20px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#F5F5F7"></path></g></svg>
-                </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-full-black via-gray-900/40"></div>
+              <Link to={`/post/${id}`}>
+                 <div className="absolute inset-0 "></div>
               </Link>
-              <h3 class="z-10 mt-3 flex  text-lg bold align-left font-bold text-iphone-white">
+              <h3 className="z-10 mt-3 flex  text-lg bold align-left font-bold text-iphone-white">
                 {title || "Untitled"} <br />
               </h3>
 
-              <h3 class="z-10 mt-3 mb-3 flex text-sm italic thin font-extralight text-iphone-white">
+              <h3 className="z-10 mt-3 mb-3 flex text-sm italic thin font-extralight text-iphone-white">
                 Rs {Price || "Untitled"} <br />
                 <div className="pl-3 pr-1">
                   <svg
@@ -46,20 +40,20 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
                     version="1.0"
                     id="Layer_1"
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
                     width="64px"
                     height="64px"
                     viewBox="0 0 64 64"
-                    enable-background="new 0 0 64 64"
-                    xml:space="preserve"
+                    enableBackground="new 0 0 64 64"
+                    xmlSpace="preserve"
                     fill="#F5F5F7"
                     stroke="#F5F5F7"
                   >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></g>
                     <g id="SVGRepo_iconCarrier">
                       {" "}
@@ -89,21 +83,21 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
                     version="1.1"
                     id="Capa_1"
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
                     width="64px"
                     height="64px"
                     viewBox="0 0 902.86 902.86"
-                    xml:space="preserve"
+                    xmlSpace="preserve"
                     transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"
                     stroke="#F5F5F7"
                   >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       stroke="#CCCCCC"
-                      stroke-width="1.8057200000000002"
+                      strokeWidth="1.8057200000000002"
                     ></g>
                     <g id="SVGRepo_iconCarrier">
                       {" "}
