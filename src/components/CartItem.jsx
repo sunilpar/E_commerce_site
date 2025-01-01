@@ -3,10 +3,8 @@ import appwriteService from "../appwrite/config";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import Select from "./Select.jsx";
-import { removeFromCart,clearCart } from "../store/cartslice.js";
+import { removeFromCart } from "../store/cartslice.js";
 import { useSelector, useDispatch } from "react-redux";
-import Cart from "../pages/cart.jsx";
-import { use } from "react";
 
 
 function CartItem({ product }) {
@@ -21,11 +19,11 @@ function CartItem({ product }) {
   }
 
 
-  return product? (
+  return product?(
     <div className=" mb-6 flex justify-start md:justify-center flex-wrap gap-7  ">
       <Link to={`/post/${id}`} className="flex flex-row  h-fit">
         <img
-          className=" max-w-[210px] max-h-[300px] rounded-lg object-cover hover:scale-105"
+          className=" max-w-[210px] max-h-[300px] rounded-lg object-cover hover:scale-105 hover:duration-300"
           src={appwriteService.getFilePreview(fileid)}
           alt=""
         />
@@ -33,7 +31,7 @@ function CartItem({ product }) {
 
       <div className=" flex flex-col text-iphone-white ">
         {/* ttile section */}
-        <div className="  w-[500px] flex  text-3xl sm:text-4xl font-extrabold mb-6 ">
+        <div className="  w-[500px] flex  text-3xl text-left sm:text-4xl font-extrabold mb-6 ">
           {title}
         </div>
 
@@ -203,6 +201,7 @@ function CartItem({ product }) {
           </button>
         </div>
       </div>
+
     </div>
   ):(<div>
     No item in cart
