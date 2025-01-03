@@ -8,11 +8,12 @@ import Button from "../components/Button";
 import conf from "../conf/conf";
 import { Query } from "appwrite";
 import { Select } from "../components";
-import Book from "../components/Book";
+import { addToCart } from "../store/cartslice.js";
 
 function Post() {
   const navigate = useNavigate();
   const slug = useParams();
+  const dispatch = useDispatch();
   const userData = useSelector((state) => state.auth.userData);
   const isAdmin = userData && userData.$id == conf.adminId ? true : undefined;
 
@@ -32,6 +33,13 @@ function Post() {
   const fileid = post?.Cover_Img;
   const price = post?.Price;
   const title = post?.Product_Title;
+  const id = post?.Product_Id;
+
+  const handleCart = (id) => {
+    dispatch(addToCart(id));
+ };
+
+
   return post ? (
     <div className=" flex flex-col justify-center min-h-screen flex-wrap">
       {/* img and titles */}
@@ -102,7 +110,7 @@ function Post() {
             </div>
           </div>
 
-          <Button className="py-4 w-[200px] mb-6 font-bold ">
+          <Button onClick={() => handleCart(id)} className="py-4 w-[200px] mb-6 font-bold ">
             Add To Cart
           </Button>
         </div>

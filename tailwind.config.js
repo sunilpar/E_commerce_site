@@ -14,6 +14,8 @@ export default {
       'skin-light': '#BF9A69',
       'skin-green': '#001317',
       'skin-red': '#FF9696',
+      'clear-red': '#B20600',
+      
     }
     
   },

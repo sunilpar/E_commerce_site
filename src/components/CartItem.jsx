@@ -3,23 +3,38 @@ import appwriteService from "../appwrite/config";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import Select from "./Select.jsx";
-import { removeFromCart } from "../store/cartslice.js";
+import { clearOrder,removeOrder,addOrder } from "../store/orderSlice.js";
+import { removeFromCart } from "../store/cartSlice.js";
 import { useSelector, useDispatch } from "react-redux";
-
 
 function CartItem({ product }) {
   const title = product.Product_Title;
-  const fileid =product.Cover_Img;
+  const fileid = product.Cover_Img;
   const id = product.Product_Id;
-  const [cartId , setCartId] = useState(id);
+  const price = product.Price;
   const dispatch = useDispatch();
+  const orders = useSelector(state => state.order.orders);
 
-  const removeHandler=(id)=> {
+  const removeHandler = (id) => {
     dispatch(removeFromCart(id));
-  }
+  };
 
+  const [quantity, setQuantity] = useState(1);
 
-  return product?(
+  const handleQdown = () => {
+    if (quantity == 1) {
+    } else {
+      setQuantity(quantity - 1);
+    }
+  };
+  const handleQup = () => {
+    if (quantity == 10) {
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  return product ? (
     <div className=" mb-6 flex justify-start md:justify-center flex-wrap gap-7  ">
       <Link to={`/post/${id}`} className="flex flex-row  h-fit">
         <img
@@ -45,7 +60,7 @@ function CartItem({ product }) {
 
         {/* price section */}
         <div className=" text-md italic thin  flex justify-start mb-6">
-          Rs {product.Price}
+          Rs {product.Price * quantity}
           <div className="pl-3 pr-1">
             <svg
               className="w-[20px] h-[20px]"
@@ -88,7 +103,10 @@ function CartItem({ product }) {
 
         {/* quantity section */}
         <div className=" flex align-middle gap-4 mb-6">
-          <button className=" w-[20px] h-[20px] hover:scale-105">
+          <button
+            onClick={() => handleQdown()}
+            className={`  w-[20px] h-[20px] hover:scale-105`}
+          >
             <svg
               width="20px"
               height="20px"
@@ -137,8 +155,11 @@ function CartItem({ product }) {
               </g>
             </svg>
           </button>
-          <div>1</div>
-          <button className=" w-[20px] h-[20px] hover:scale-105 ">
+          <div>{quantity}</div>
+          <button
+            onClick={() => handleQup()}
+            className={`  w-[20px] h-[20px] hover:scale-105`}
+          >
             <svg
               width="20px"
               height="20px"
@@ -189,23 +210,76 @@ function CartItem({ product }) {
           </button>
         </div>
 
-
         {/* buynow section */}
         <div className=" mb-6 py-2 flex flex-row justify-start flex-wrap gap-7 w-[370px] h-[50px] font-bold ">
-          <Button className="px-6 py-2 extra-bold ">
-            Buy Now
-          </Button>
+          <Button onClick={() => dispatch(addOrder({id,quantity,price}))} className="px-6 py-2 extra-bold ">Buy Now</Button>
+          <button onClick={() => dispatch(removeOrder({id,quantity,price}))} className="mt-1 hover:scale-105 ">
+          <svg width="20px" height="20px" viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="si-glyph si-glyph-button-error" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>970</title> <defs> </defs> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g transform="translate(1.000000, 0.000000)" fill="#B20600"> <path d="M13.646,2.371 C10.535,-0.739 5.469,-0.74 2.358,2.371 C-0.753,5.483 -0.752,10.548 2.358,13.66 C5.469,16.77 10.534,16.771 13.646,13.66 C16.758,10.547 16.757,5.483 13.646,2.371 L13.646,2.371 Z M3.587,12.431 C1.148,9.993 1.146,6.028 3.58,3.594 C6.014,1.159 9.979,1.162 12.418,3.6 C14.856,6.038 14.857,10.004 12.424,12.438 C9.988,14.872 6.024,14.869 3.587,12.431 L3.587,12.431 Z" class="si-glyph-fill"> </path> <path d="M10.164,11.063 C9.982,11.063 9.845,10.991 9.776,10.922 L8.009,9.157 L6.314,10.852 C6.248,10.918 6.095,10.998 5.891,10.998 C5.738,10.998 5.507,10.952 5.288,10.733 C5.067,10.513 5.018,10.295 5.017,10.153 C5.013,9.965 5.086,9.823 5.157,9.753 L6.881,8.028 L5.201,6.35 C5.049,6.197 4.922,5.723 5.321,5.325 C5.546,5.1 5.767,5.053 5.914,5.053 C6.097,5.053 6.234,5.125 6.301,5.194 L8.009,6.9 L9.705,5.204 C9.773,5.137 9.925,5.058 10.129,5.058 C10.283,5.058 10.514,5.104 10.733,5.324 C11.111,5.703 11.035,6.134 10.864,6.304 L9.138,8.03 L10.875,9.766 C10.942,9.834 11.021,9.986 11.021,10.19 C11.021,10.344 10.976,10.573 10.756,10.792 C10.531,11.016 10.311,11.063 10.164,11.063 L10.164,11.063 L10.164,11.063 Z" class="si-glyph-fill"> </path> </g> </g> </g></svg>
+          </button>
 
-          <button onClick={() => removeHandler(id)} className="ml-[8rem] hover:scale-105">
-            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#F5F5F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M14 12V17" stroke="#F5F5F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M4 7H20" stroke="#F5F5F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#F5F5F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#F5F5F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
+          <button
+            onClick={() => removeHandler(id)}
+            className="ml-[8rem] hover:scale-105"
+          >
+            <svg
+              width="30px"
+              height="30px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <path
+                  d="M10 12V17"
+                  stroke="#F5F5F7"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>{" "}
+                <path
+                  d="M14 12V17"
+                  stroke="#F5F5F7"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>{" "}
+                <path
+                  d="M4 7H20"
+                  stroke="#F5F5F7"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>{" "}
+                <path
+                  d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10"
+                  stroke="#F5F5F7"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>{" "}
+                <path
+                  d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                  stroke="#F5F5F7"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>{" "}
+              </g>
+            </svg>
           </button>
         </div>
       </div>
-
     </div>
-  ):(<div>
-    No item in cart
-  </div>);
+  ) : (
+    <div>No item in cart</div>
+  );
 }
 
 export default CartItem;
