@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import appwriteService from "../appwrite/config";
 import { Link } from "react-router-dom";
 import Button from "./Button";
-import { addToCart } from "../store/cartslice.js";
+import { addToCart } from "../store/cartSlice.js";
 import { useSelector, useDispatch } from "react-redux";
 function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
   const title = Product_Title;
@@ -15,7 +15,7 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
 
   return (
     <div >
-      <div className="w-[220px] h-[400px] overflow-hidden rounded-lg p-2 flex items-center flex-col">
+      <div className="w-[220px] h-[400px] overflow-hidden rounded-lg p-2 flex items-center flex-col hover:scale-105">
         <div className="w-[210px] h-[300px]   mb-7  ">
           {fileid ? (
             <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-lg p-6 pt-60 pb-8  max-w-sm mx-auto mt-2     ">
