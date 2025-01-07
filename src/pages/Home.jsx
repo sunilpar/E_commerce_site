@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className='min-h-screen'>
       <div className='feartured-items h-screen '>
-        <div className='text-iphone-white text-5xl font-extrabold'>
+        <div className='fade text-iphone-white text-5xl font-extrabold'>
           Home Page
         </div>
         
@@ -15,12 +15,12 @@ function Home() {
 
 
       {/* feartured items */}
-      <div  className='feartured-items min-h-screen   '>
+      <div  className='fade feartured-items min-h-screen   '>
         <div className='text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
           Featured Items
         </div>
             
-        <div >
+        <div  className=''>
         
           <Product productTitles={["A Game of Thrones",
                                    "A Clash of Kings",
@@ -30,11 +30,11 @@ function Home() {
         </div>
       </div>
 
-      <div className='catalog min-h-screen'>
-          <div className='text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
+      <div className=' min-h-screen'>
+          <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
               Catagories
             </div>
-            <div className='flex flex-col flex-wrap gap-5'>
+            <div className='fade flex flex-col flex-wrap gap-5'>
               {/* catagories item row */}
               <div className='flex flex-row justify-center gap-5'>
 
@@ -186,8 +186,21 @@ function Home() {
               
 
             </div>
+      </div>
 
-
+       {/* item from catagories */}
+       <div id='fiction-books' className=' feartured-items min-h-screen  '>
+        <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
+          Fantasy Books
+        </div>
+        <div className='fade bg-gradient-to-b from-skin-green from-20% to-full-black to-50% rounded-3xl min-h-screen' >
+        
+          <Product productTitles={["A Game of Thrones",
+                                   "A Clash of Kings",
+                                   "A Storm of Swords",
+                                   "A Feast for Crows",
+                                   "A Dance with Dragons",]}  />
+        </div>
       </div>
 
 
