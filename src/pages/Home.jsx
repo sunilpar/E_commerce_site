@@ -1,6 +1,15 @@
 import React from 'react'
 import Product from '../components/Product'
 import fiction from '../assets/fiction.png'
+import fantasy from '../assets/fantasy.png'
+import Romance from '../assets/Romance.png'
+import philosophy from '../assets/philosophy.png'
+import kids from '../assets/kids.png'
+import Religion from '../assets/Religion.png'
+import Biography from '../assets/Biography.png'
+import Horror from '../assets/Horror.png'
+import History from '../assets/History.png'
+
 
 function Home() {
   return (
@@ -42,7 +51,7 @@ function Home() {
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
                         className="absolute inset-0 h-fit w-fit object-cover "
-                        src={fiction}
+                        src={fantasy}
                         alt=""
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
@@ -56,8 +65,8 @@ function Home() {
                 <a  href="#Romance-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-fit w-fit object-cover "
-                        src={fiction}
+                        className="absolute  h-[138px] w-[152px] object-cover  "
+                        src={Romance}
                         alt=""
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
@@ -72,8 +81,8 @@ function Home() {
                 <a  href="#Horror-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-fit w-fit object-cover "
-                        src={fiction}
+                        className="absolute  h-[147px] w-[139px] object-cover "
+                        src={Horror}
                         alt=""
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
@@ -91,7 +100,7 @@ function Home() {
                 <a  href="#fiction-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-fit w-fit object-cover "
+                        className="absolute inset-0 h-[156px] w-[245px] object-cover "
                         src={fiction}
                         alt=""
                       />
@@ -106,8 +115,8 @@ function Home() {
                 <a  href="#Religion-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-fit w-fit object-cover "
-                        src={fiction}
+                        className="absolute inset-0 h-[151px] w-[279px] object-cover "
+                        src={Religion}
                         alt=""
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
@@ -121,8 +130,8 @@ function Home() {
                 <a  href="#History-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-fit w-fit object-cover "
-                        src={fiction}
+                        className="absolute inset-0 h-[151px] w-[279px] object-cover "
+                        src={History}
                         alt=""
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
@@ -140,8 +149,8 @@ function Home() {
                 <a  href="#philosophy-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-fit w-fit object-cover "
-                        src={fiction}
+                        className="absolute inset-0 h-[151px] w-[123px] object-cover "
+                        src={philosophy}
                         alt=""
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
@@ -155,8 +164,8 @@ function Home() {
                 <a  href="#Biography-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-fit w-fit object-cover "
-                        src={fiction}
+                        className="absolute inset-0 h-[98px] w-[103px] object-cover "
+                        src={Biography}
                         alt=""
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
@@ -166,12 +175,12 @@ function Home() {
                     </article>
                   </a>
                 </div>
-                <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105'>
+                <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105 overflow-hidden'>
                 <a  href="#kids-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-fit w-fit object-cover "
-                        src={fiction}
+                        className="absolute  h-[143px] w-[115px] object-cover "
+                        src={kids}
                         alt=""
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
