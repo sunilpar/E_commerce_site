@@ -65,7 +65,7 @@ function Home() {
                 <a  href="#Romance-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute  h-[138px] w-[152px] object-cover  "
+                        className="absolute  h-[118px] w-[223px] object-cover  "
                         src={Romance}
                         alt=""
                       />
@@ -81,7 +81,7 @@ function Home() {
                 <a  href="#Horror-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute  h-[147px] w-[139px] object-cover "
+                        className="absolute  h-[142px] w-[235px] object-cover "
                         src={Horror}
                         alt=""
                       />
@@ -100,7 +100,7 @@ function Home() {
                 <a  href="#fiction-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-[156px] w-[245px] object-cover "
+                        className="absolute inset-0 h-[147px] w-[264px] object-cover "
                         src={fiction}
                         alt=""
                       />
@@ -130,7 +130,7 @@ function Home() {
                 <a  href="#History-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-[151px] w-[279px] object-cover "
+                        className="absolute inset-0 h-[157px] w-[279px] object-cover "
                         src={History}
                         alt=""
                       />
@@ -149,7 +149,7 @@ function Home() {
                 <a  href="#philosophy-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-[151px] w-[123px] object-cover "
+                        className="absolute inset-0 h-[148px] w-[243px] object-cover "
                         src={philosophy}
                         alt=""
                       />
@@ -164,7 +164,7 @@ function Home() {
                 <a  href="#Biography-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-[98px] w-[103px] object-cover "
+                        className="absolute inset-0 h-[159px] w-[253px] object-cover "
                         src={Biography}
                         alt=""
                       />
@@ -179,7 +179,7 @@ function Home() {
                 <a  href="#kids-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute  h-[143px] w-[115px] object-cover "
+                        className="absolute  h-[143px] w-[227px] object-cover "
                         src={kids}
                         alt=""
                       />
