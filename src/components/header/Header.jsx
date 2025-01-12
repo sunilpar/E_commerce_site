@@ -53,7 +53,7 @@ function Header() {
           <ul className="flex ml-auto">
             <li>
               <Link to="/cart">
-                <button className="flex flex-row inline-bock px-2 py-2 hover:duration-150 text-iphone-white hover:bg-iphone-black hover:text-black duration-200 rounded-lg">
+                <button className="flex flex-row mx-2 inline-bock px-2 py-2 hover:duration-150 text-iphone-white hover:bg-iphone-black hover:text-black duration-200 rounded-lg">
                   <div className="flex flex-row">
                     <div>
                       <svg
@@ -94,7 +94,7 @@ function Header() {
                 <li key={item.name}>
                   <button
                     onClick={() => navigate(item.slug)}
-                    className="inline-bock px-4 py-2 hover:duration-150 text-iphone-white hover:bg-iphone-black hover:text-black duration-200 rounded-lg"
+                    className="inline-bock mx-2 px-4 py-2 hover:duration-150 text-iphone-white hover:bg-iphone-black hover:text-black duration-200 rounded-lg"
                   >
                     {item.name}
                   </button>

@@ -35,7 +35,12 @@ function Home() {
                                    "A Clash of Kings",
                                    "A Storm of Swords",
                                    "A Feast for Crows",
-                                   "A Dance with Dragons"]}  />
+                                   "A Dance with Dragons",
+                                   "The Silmarillion",
+                                   "The Hobbit",
+                                   "The Fellowship Of The Ring",
+                                   "The Two Towers",
+                                   "The Return Of The King",]}  />
         </div>
       </div>
 

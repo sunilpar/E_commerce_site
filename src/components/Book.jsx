@@ -15,21 +15,21 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
 
   return (
     <div >
-      <div className="w-[220px] h-[400px] overflow-hidden rounded-lg p-2 flex items-center flex-col hover:scale-105">
-        <div className="w-[210px] h-[300px]   mb-7  ">
+      <div className="w-[220px] min-h-[374px]  rounded-xl p-2 flex items-center flex-col hover:scale-105">
+        <div className="w-[210px] h-[300px]   mb-7  flex ">
           {fileid ? (
-            <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-lg p-6 pt-60 pb-8  max-w-sm mx-auto mt-2     ">
+            <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-lg p-6 pt-72 pb-8  max-w-sm mx-auto mt-2     ">
               <img
                 className="absolute inset-0 h-full w-full object-cover"
                 src={appwriteService.getFilePreview(fileid)}
                 alt=""
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-full-black via-gray-900/40"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-full-black  opacity-70"></div>
               <Link to={`/post/${id}`}>
                  <div className="absolute inset-0 "></div>
               </Link>
-              <h3 className="z-10 mt-3 flex  text-lg bold align-left font-bold text-iphone-white">
-                {title || "Untitled"} <br />
+              <h3 className="z-10 mt-3 flex  text-lg bold text-left font-bold text-iphone-white top-o ">
+                {title || "Untitled"}<br />
               </h3>
 
               <h3 className="z-10 mt-3 mb-3 flex text-sm italic thin font-extralight text-iphone-white">
