@@ -24,7 +24,7 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
                 src={appwriteService.getFilePreview(fileid)}
                 alt=""
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-full-black  opacity-70"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-full-black  opacity-80"></div>
               <Link to={`/post/${id}`}>
                  <div className="absolute inset-0 "></div>
               </Link>

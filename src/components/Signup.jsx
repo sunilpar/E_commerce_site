@@ -29,7 +29,7 @@ function Signup() {
   return (
     <div className="flex items-center justify-center h-screen text-iphone-white ">
       <div
-        className={`mx-auto w-full max-w-lg rounded-xl p-10  ` }
+        className={`mx-auto w-full max-w-lg rounded-xl p-10 ring-1 ring-iphone-white ring-opacity-70 ` }
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]"></span>

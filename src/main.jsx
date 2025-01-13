@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
@@ -12,20 +12,6 @@ import ProductForm from "./components/productform/Productform.jsx"
 import Home from "./pages/Home.jsx"
 import Cart from './pages/cart.jsx'
 import Post from './pages/Post.jsx'
-
-//  //animation
-//  const observer = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         entry.target.classList.add("show");
-//       } else {
-//         entry.target.classList.remove("show");
-//       }
-//     });
-//   });
-//   const fadedElements = document.querySelectorAll(".fade");
-//   fadedElements.forEach((el) => observer.observe(el));
-
 
 const router = createBrowserRouter([
   {

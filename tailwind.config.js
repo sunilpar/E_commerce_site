@@ -16,7 +16,11 @@ export default {
       'skin-red': '#FF9696',
       'clear-red': '#B20600',
       
-    }
+    },
+    fontFamily: {
+      outfit: ["Outfit","sans-serif"],
+      roboto: ["roboto","sans-serif"],
+    },
     
   },
   plugins: [],
