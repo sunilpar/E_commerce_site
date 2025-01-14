@@ -2,11 +2,13 @@ import React from "react";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
+
+//pngs
 import heropng from "../assets/heroGradient.png";
 import hero11 from "../assets/hero11.png";
 import hero22 from "../assets/hero22.png";
 import hero44 from "../assets/hero44.jpg";
-
 import hero55 from "../assets/hero55.jpg";
 import hero6 from "../assets/hero6.jpg";
 
@@ -17,7 +19,6 @@ function Hero() {
         gsap.to(".B", {
             scrollTrigger: {
             trigger: ".B",
-            tirggerActions: " restart pause reverse pause",
             scrub: 1,
             },
             y: -50,
@@ -63,36 +64,28 @@ function Hero() {
           let every page turn bring you closer to your next unforgettable read.
         </p>
         <div className="flex flex-row opacity-80">
-          <button
-            className="md:ml-60 sm:ml-5 ml-1 mt-6 text-[#F5F5F7] flex flex-row font-outfit font-bold text-xl rounded-xl w-fit hover:ring-1 px-2 py-1 hover:bg-[#F5F5F7] hover:text-[#161617] ring-[#F5F5F7] ring-1 hover:duration-200"
-          >
-            Sign up
-            <svg
-              className="h-[31px] w-[12px] ml-1"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-8 h-8 ml-2"
+          <Link to={"/signup"}>
+            <button 
+              className="md:ml-60 sm:ml-5 ml-1 mt-6 text-[#F5F5F7] flex flex-row font-outfit font-bold text-xl rounded-xl w-fit hover:ring-1 px-4 py-1 hover:bg-[#F5F5F7] hover:text-[#161617] ring-[#F5F5F7] ring-1 hover:duration-200"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-              ></path>
-            </svg>
-          </button>
+              Sign up
+            
+            </button>
 
-          <button
-            className=" ml-2 mt-6 hover:text-[#F5F5F7] hover:bg-[#161617] flex flex-row font-outfit font-bold text-xl rounded-xl w-fit hover:ring-1 px-6 py-1 bg-[#F5F5F7] text-[#161617]
-                                ring-[#F5F5F7] ring-1 hover:duration-200"
-          >
-            Login
-          </button>
+          </Link>
+          
+          <Link to={"/login"}>
+              <button
+              className=" ml-2 mt-6 hover:text-[#F5F5F7] hover:bg-[#161617] flex flex-row font-outfit font-bold text-xl rounded-xl w-fit hover:ring-1 px-6 py-1 bg-[#F5F5F7] text-[#161617]
+                                  ring-[#F5F5F7] ring-1 hover:duration-200"
+            >
+              Login
+            </button>
+          </Link>
+          
         </div>
       </div>
-      <div className="flex flex-row gap-5 mb-9 justify-center ">
+      <div className="flex flex-row gap-5 mb-9 justify-center">
         {/* books */}
         <div className="A   rounded-3xl   h-[464px] min-w-[249px] mt-[-50px]  opacity-60"><img src={hero11} className="w-full h-full object-cover rounded-3xl" alt="" /></div>
         <div className="B position-relative rounded-3xl  h-[464px] min-w-[249px] mt-[50px]  opacity-60"><img src={hero22} className="w-full h-full object-cover rounded-3xl" alt="" /></div>

@@ -10,7 +10,7 @@ import {Login } from './components/index.js'
 import Signup from "./components/Signup.jsx"
 import ProductForm from "./components/productform/Productform.jsx"
 import Home from "./pages/Home.jsx"
-import Cart from './pages/cart.jsx'
+import Cart from './pages/Cart.jsx'
 import Post from './pages/Post.jsx'
 
 const router = createBrowserRouter([

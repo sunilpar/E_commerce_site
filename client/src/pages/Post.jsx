@@ -1,4 +1,5 @@
 import React from "react";
+import Product from "../components/Product.jsx";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,7 +9,8 @@ import Button from "../components/Button";
 import conf from "../conf/conf";
 import { Query } from "appwrite";
 import { Select } from "../components";
-import { addToCart } from "../store/cartslice.js";
+import { addToCart } from "../store/cartSlice.js";
+import { Link } from "react-router-dom";
 
 function Post() {
   const navigate = useNavigate();
@@ -41,7 +43,7 @@ function Post() {
 
 
   return post ? (
-    <div className=" flex flex-col justify-center min-h-screen flex-wrap">
+    <div className=" flex flex-col justify-center min-h-screen flex-wrap mt-6">
       {/* img and titles */}
       <div className="flex flex-row justify-center flex-wrap">
         <div className="mb-6">
@@ -51,10 +53,10 @@ function Post() {
             alt=""
           />
         </div>
-        <div className="flex flex-col justify-space-between ml-10 ">
+        <div className="flex flex-col justify-space-between ml-10  mt-6">
           <div className="w-[340px] flex flex-wrap">
             <h1 className="text-4xl text-left font-extrabold text-iphone-white mb-24">
-              {title}sadsadasd asda sd asda sad sda
+              {title}
             </h1>
           </div>
           <div className=" flex flex-col text-iphone-white mb-10 ">
@@ -118,9 +120,12 @@ function Post() {
 
       {/* continue browsering */}
       <div>
-        <Button className="py-4 w-[343px] lg:mr-[23.6rem] justify-center mb-6 opacity-40 hover:opacity-50 ">
-          Continue Browersing
-        </Button>
+        <Link to={"/"}>
+          <Button className="py-4 w-[343px] lg:mr-[23.6rem] justify-center mb-6 opacity-40 hover:opacity-50 ">
+            Continue Browersing
+          </Button>
+        </Link>
+        
       </div>
 
       {/* description */}
@@ -155,11 +160,29 @@ function Post() {
 
       {/* related product */}
       <div className="min-h-screen">
-      <div className="w-full flex justify-center">
-          <div className="text-iphone-white text-5xl font-extrabold mb-6 flex justify-start lg:mr-[16.3rem]">
-            Books You May Like
-          </div>
+      <div  className='fade feartured-items min-h-screen   '>
+        <div className='text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
+          Books you may like
         </div>
+            
+        <div  className=''>
+        
+          <Product productTitles={["A Game of Thrones",
+                                   "A Clash of Kings",
+                                   "A Storm of Swords",
+                                   "A Feast for Crows",
+                                   "A Dance with Dragons",
+                                   "The Silmarillion",
+                                   "The Hobbit",
+                                   "The Fellowship Of The Ring",
+                                   "The Two Towers",
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
+        </div>
+      </div>
 
       </div>
 

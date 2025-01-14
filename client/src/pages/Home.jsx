@@ -1,4 +1,8 @@
 import React from 'react'
+
+
+
+//pngs
 import Hero from '../components/Hero'
 import Product from '../components/Product'
 import fiction from '../assets/fiction.png'
@@ -21,10 +25,8 @@ function Home() {
       <div  className='fade feartured-items min-h-screen   '>
         <div className='text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
           Featured Items
-        </div>
-            
+        </div> 
         <div  className=''>
-        
           <Product productTitles={["A Game of Thrones",
                                    "A Clash of Kings",
                                    "A Storm of Swords",
@@ -34,7 +36,11 @@ function Home() {
                                    "The Hobbit",
                                    "The Fellowship Of The Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",]}  />
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 
@@ -212,7 +218,11 @@ function Home() {
                                    "The Hobbit",
                                    "The Fellowship Of The Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",]}  />
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 
@@ -230,7 +240,11 @@ function Home() {
                                    "The Hobbit",
                                    "The Fellowship Of The Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",]}  />
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 
@@ -249,7 +263,11 @@ function Home() {
                                    "The Hobbit",
                                    "The Fellowship Of The Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",]}  />
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 
@@ -258,7 +276,6 @@ function Home() {
           Kids Books
         </div>
         <div className='fade  bg-[#310a12] rounded-3xl mb-6' >
-        
         <Product productTitles={["A Game of Thrones",
                                    "A Clash of Kings",
                                    "A Storm of Swords",
@@ -268,7 +285,11 @@ function Home() {
                                    "The Hobbit",
                                    "The Fellowship Of The Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",]}  />
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 
@@ -287,7 +308,11 @@ function Home() {
                                    "The Hobbit",
                                    "The Fellowship Of The Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",]}  />
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 
@@ -306,7 +331,11 @@ function Home() {
                                    "The Hobbit",
                                    "The Fellowship Of The Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",]}  />
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 
@@ -325,7 +354,11 @@ function Home() {
                                    "The Hobbit",
                                    "The Fellowship Of The Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",]}  />
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 
@@ -344,7 +377,11 @@ function Home() {
                                    "The Hobbit",
                                    "The Fellowship Of The Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",]}  />
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 
@@ -363,7 +400,11 @@ function Home() {
                                    "The Hobbit",
                                    "The Fellowship Of The Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",]}  />
+                                   "The Return Of The King",
+                                   "Harry Potter and the Sorcerer's Stone",
+                                   "Harry Potter and the Chamber of Secrets",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 

@@ -3,7 +3,6 @@ import { Container } from '../components'
 import appwriteService from "../appwrite/config";
 import Book from "../components/Book";
 import { Query} from "appwrite";
-import parse from 'html-react-parser';
 
 
 function Product(productTitles) {

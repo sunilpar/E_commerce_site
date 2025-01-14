@@ -36,12 +36,12 @@ function Cart() {
 
   return (
     <div className="w-full py-8 min-h-screen ">
-      <div className="z-10 absolute text-4xl font-extrabold opacity-0 lg:opacity-100 text-iphone-white top-[50px] left-[40px] mt-4">
+      <div className="z-10 absolute text-4xl font-extrabold opacity-0 xl:opacity-100 text-iphone-white top-[50px] left-[200px] mt-4">
         <h1>Cart</h1>
       </div>
       <div className="absolute sm:top-[50px] sm:right-[40px] mt-4 top-[150px] right-[40px]">
         <Button
-          className="bg-clear-red text-"
+          className="bg-[#700000] text-"
           onClick={() => dispatch(clearCart(),clearOrder())}
         >
           Clear Cart
