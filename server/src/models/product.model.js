@@ -13,16 +13,24 @@ const productSchema = new Schema(
             type: String, //public url
             required: true,
         },
+        Description:{
+            type: String,
+            required: true,
+        },
         Pdf:{
-            type:Double ,
+            type:Number,
             required: true,
         },
         Audio:{
-            type:Double
+            type:Number
         },
         Star:{
             type: Schema.Types.ObjectId,
             ref:"Review"
+        },
+        Tags:{
+            type:String,
+            required: true
         }
     }, 
     {

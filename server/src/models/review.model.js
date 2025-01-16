@@ -3,22 +3,28 @@ import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const reviewSchema = new Schema(
     {
-        User:{
-            type: Schema.Types.ObjectId,
-            ref:"User",
+        ProductId:{
+            type: String,
             required: true
         },
-        Product:{
-            type: Schema.Types.ObjectId,
-            ref:"Product",
+        UserId:{
+            type: String,
             required: true
         },
-        review:{
+        UserName:{
+            type: String,
+            required: true
+        },
+        UserAvatar:{
+            type: String,
+            required: true
+        },
+        Review:{
             type: String,
             required: true
         },
         Star:{
-            type:Double,
+            type:Number,
         }
     }, 
     {

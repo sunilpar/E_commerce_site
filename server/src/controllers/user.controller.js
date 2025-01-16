@@ -88,7 +88,7 @@ const registerUser = asyncHandler( async (req, res) => {
 
     const existedUser = await User.findOne({
         $or: [{ FullName }, { Email }]
-    })
+    })    
 
     if (existedUser) {
         throw new ApiError(409, "User with email or same Name already exists")
@@ -97,7 +97,7 @@ const registerUser = asyncHandler( async (req, res) => {
 
     const user = await User.create({
         FullName:FullName.toLowerCase(),
-        Avatar: Avatar?.url || "",
+        Avatar: Avatar?.url || "https://yh62qzkj87.ufs.sh/f/pZPIEKJzfK9caQO8TODNI6xJZzUwoT75KbDfuBp93i1FgLYr",
         Email, 
         Password,
     })
