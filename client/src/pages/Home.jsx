@@ -1,7 +1,4 @@
 import React from 'react'
-
-
-
 //pngs
 import Hero from '../components/Hero'
 import Product from '../components/Product'

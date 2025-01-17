@@ -13,6 +13,9 @@ import Home from "./pages/Home.jsx"
 import Cart from './pages/Cart.jsx'
 import Post from './pages/Post.jsx'
 
+//test 
+import Test from './components/test.jsx'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +28,10 @@ const router = createBrowserRouter([
         {
             path: "/post/:id",
             element: <Post />,
+        },
+        {
+            path: "/test",
+            element: <Test/>,
         },
         {
             path: "/cart",

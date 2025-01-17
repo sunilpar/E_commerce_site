@@ -64,7 +64,7 @@ function Hero() {
           let every page turn bring you closer to your next unforgettable read.
         </p>
         <div className="flex flex-row opacity-80">
-          <Link to={"/signup"}>
+          <Link to={"/test"}>
             <button 
               className="md:ml-60 sm:ml-5 ml-1 mt-6 text-[#F5F5F7] flex flex-row font-outfit font-bold text-xl rounded-xl w-fit hover:ring-1 px-4 py-1 hover:bg-[#F5F5F7] hover:text-[#161617] ring-[#F5F5F7] ring-1 hover:duration-200"
             >
