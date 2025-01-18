@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { clearOrder} from "../store/orderSlice.js";
-import appwriteService from "../appwrite/config";
+import service from "../appwrite/config";
 import CartItem from "../components/CartItem";
 import { clearCart } from "../store/cartSlice.js";
 import { Query } from "appwrite";
@@ -13,19 +13,26 @@ function Cart() {
   const [product, setProduct] = useState([]);
   const dispatch = useDispatch();
   const orders = useSelector(state => state.order.orders);
+
+
+  const strIds = Array.isArray(productIds)
+  ? productIds.map(item => `"${item}"`).join(',')
+  : productIds;
   useEffect(() => {
-    if (productIds.length > 0) {
-      appwriteService
-        .getProducts([Query.contains("Product_Id", productIds)])
-        .then((response) => {
-          if (response) {
-            setProduct(response.documents);
+    (async () => {
+      if (productIds.length > 0) {
+        try {
+          const getproducts = await service.getProductsByid(strIds);
+          setProduct(getproducts.data);
+          } catch (error) {
+            console.error("Error fetching products:", error);
           }
-        });
-    } else {
-      setProduct([]);
-    }
-  }, [productIds]);
+      }else{
+        setProduct([]);
+      }
+      
+    })();
+  }, [productIds],[strIds]);
 
   
   let Subtotal = 0;

@@ -4,7 +4,8 @@ import { createProduct,
          getProduct,
          getProducts,
          searchSuggestion,
-         searchPage
+         searchPage,
+         getProductsWithId
  } from "../controllers/product.controller.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
 
@@ -15,6 +16,7 @@ const router = Router()
 
 router.route("/get-product").post(getProduct)
 router.route("/get-products").post(getProducts)
+router.route("/get-Byids").post(getProductsWithId)
 router.route("/get-suggestions").post(searchSuggestion)
 router.route("/get-searchpage").post(searchPage)
  

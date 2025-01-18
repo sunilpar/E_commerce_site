@@ -8,12 +8,21 @@ import { removeFromCart } from "../store/cartSlice.js";
 import { useSelector, useDispatch } from "react-redux";
 
 function CartItem({ product }) {
-  const title = product.Product_Title;
-  const fileid = product.Cover_Img;
-  const id = product.Product_Id;
-  const price = product.Price;
+  const Title = product.Title;
+  const CoverImage = product.CoverImage;
+  const id = product._id;
+  const Pdf = product.Pdf;
+  const Audio = product.Audio;
   const dispatch = useDispatch();
   const orders = useSelector((state) => state.order.orders);
+
+  
+  const [selectedOption, setSelectedOption] = useState('Audio book');
+    
+  const handleSelectChange = (event) => {
+        setSelectedOption(event.target.value);
+      };
+  
   const removeHandler = (id) => {
     dispatch(removeFromCart(id));
   };
@@ -38,7 +47,7 @@ function CartItem({ product }) {
       <Link to={`/post/${id}`} className="flex flex-row  h-fit">
         <img
           className=" max-w-[210px] max-h-[300px] rounded-lg object-cover hover:scale-105 hover:duration-300"
-          src={appwriteService.getFilePreview(fileid)}
+          src={CoverImage}
           alt=""
         />
       </Link>
@@ -46,20 +55,23 @@ function CartItem({ product }) {
       <div className=" flex flex-col text-iphone-white ">
         {/* ttile section */}
         <div className="  w-[500px] flex  text-3xl text-left sm:text-4xl font-extrabold mb-6 ">
-          {title}
+          {Title}
         </div>
 
         {/* select section */}
         <div>
-          <Select
-            options={["Pdf", "Audio book"]}
-            className="text-iphone-white max-w-[300px] flex sm:justify-start mb-6"
-          ></Select>
+        <select 
+               value={selectedOption}
+                onChange={handleSelectChange}
+                className="px-1 py-2 rounded-xl outline-none bg-iphone-black text-center w-full text-iphone-white max-w-[300px] flex sm:justify-start mb-6" >
+                <option value="Pdf">Pdf</option>
+                <option value="Audio book">Audio book</option>
+              </select>
         </div>
 
         {/* price section */}
         <div className=" text-md italic thin  flex justify-start mb-6">
-          Rs {product.Price * quantity}
+          Rs {(selectedOption=="Pdf"?Pdf:Audio)*quantity}
           <div className="pl-3 pr-1">
             <svg
               className="w-[20px] h-[20px]"
@@ -212,7 +224,7 @@ function CartItem({ product }) {
         {/* buynow section */}
         <div className=" mb-6 py-2 flex flex-row justify-start flex-wrap gap-7 w-[370px] h-[50px] font-bold ">
           <Button
-            onClick={() => dispatch(addOrder({ id, quantity, price }))}
+            onClick={() => dispatch(addOrder({ id, quantity, price:selectedOption=="Pdf"?Pdf:Audio }))}
             className="px-6 py-2 extra-bold "
           >
             Buy Now

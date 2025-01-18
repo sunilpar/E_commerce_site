@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
-import appwriteService from "../appwrite/config";
+import service from "../appwrite/config";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import { addToCart } from "../store/cartSlice.js";
 import { useSelector, useDispatch } from "react-redux";
-function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
-  const title = Product_Title;
-  const fileid = Cover_Img;
-  const id = Product_Id;
+function Book({ Title, CoverImage, Pdf,Audio ,_id}) {
+  const id = _id;
   const dispatch = useDispatch(); 
    const handleCart = (id) => {
      dispatch(addToCart(id));
@@ -17,11 +15,11 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
     <div >
       <div className="w-[220px] min-h-[374px]  rounded-xl p-2 flex items-center flex-col hover:scale-105">
         <div className="w-[210px] h-[300px]   mb-7  flex ">
-          {fileid ? (
+          {CoverImage ? (
             <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-lg p-6 pt-72 pb-8  max-w-sm mx-auto mt-2     ">
               <img
                 className="absolute inset-0 h-full w-full object-cover"
-                src={appwriteService.getFilePreview(fileid)}
+                src={CoverImage}
                 alt=""
               />
               <div className="absolute inset-0 bg-gradient-to-t from-full-black  opacity-80"></div>
@@ -29,11 +27,11 @@ function Book({ Product_Title, Cover_Img, Price ,Product_Id}) {
                  <div className="absolute inset-0 "></div>
               </Link>
               <h3 className="z-10 mt-3 flex  text-lg bold text-left font-bold text-iphone-white top-o ">
-                {title || "Untitled"}<br />
+                {Title || "Untitled"}<br />
               </h3>
 
               <h3 className="z-10 mt-3 mb-3 flex text-sm italic thin font-extralight text-iphone-white">
-                Rs {Price || "Untitled"} <br />
+                Rs {Pdf || "Untitled"} <br />
                 <div className="pl-3 pr-1">
                   <svg
                     className="w-[20px] h-[20px]"

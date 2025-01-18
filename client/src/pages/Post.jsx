@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import appwriteService from "../appwrite/config";
+import service from "../appwrite/config";
 import Button from "../components/Button";
 import conf from "../conf/conf";
 import { Query } from "appwrite";
@@ -22,25 +22,34 @@ function Post() {
   const [post, setPost] = useState(null);
   useEffect(() => {
     if (slug) {
-      appwriteService
-        .getProducts([Query.equal("Product_Id", slug.id)])
+      service
+        .getProduct(slug.id)
         .then((post) => {
-          if (post) setPost(post.documents[0]);
+          if (post) setPost(post.data);
           else navigate("/");
         });
     } else navigate("/");
   }, [slug, navigate]);
 
-  const description = post?.Description;
-  const fileid = post?.Cover_Img;
-  const price = post?.Price;
-  const title = post?.Product_Title;
-  const id = post?.Product_Id;
+  const description = post?.product.Description;
+  const fileid = post?.product.CoverImage;
+  const Pdf = post?.product.Pdf;
+  const Audio = post?.product.Audio;
+  const title = post?.product.Title;
+  const id = post?.product._id;
+  const avgstar = post?.avgstar;
+  let price=Pdf;
+
+  
+  const [selectedOption, setSelectedOption] = useState('Audio book');
+  
+  const handleSelectChange = (event) => {
+      setSelectedOption(event.target.value);
+    };
 
   const handleCart = (id) => {
     dispatch(addToCart(id));
  };
-
 
   return post ? (
     <div className=" flex flex-col justify-center min-h-screen flex-wrap mt-6">
@@ -49,7 +58,7 @@ function Post() {
         <div className="mb-6">
           <img
             className="w-[343px] h-[541px] rounded-md"
-            src={appwriteService.getFilePreview(fileid)}
+            src={fileid}
             alt=""
           />
         </div>
@@ -62,15 +71,18 @@ function Post() {
           <div className=" flex flex-col text-iphone-white mb-10 ">
             {/* select section */}
             <div>
-              <Select
-                options={["Pdf", "Audio book"]}
-                className="text-iphone-white max-w-[300px] flex sm:justify-start mb-6"
-              ></Select>
+              <select 
+               value={selectedOption}
+                onChange={handleSelectChange}
+                className="px-1 py-2 rounded-xl outline-none bg-iphone-black text-center w-full text-iphone-white max-w-[300px] flex sm:justify-start mb-6" >
+                <option value="Pdf">Pdf</option>
+                <option value="Audio book">Audio book</option>
+              </select>
             </div>
 
             {/* price section */}
             <div className=" text-xl italic thin  flex justify-start mb-6 ml-3">
-              Rs {price}
+              Rs {selectedOption=="Pdf"?Pdf:Audio}
             </div>
             <div className="pl-3 pr-1 flex flex-row">
               <svg
@@ -108,7 +120,7 @@ function Post() {
                   </g>{" "}
                 </g>
               </svg>
-              <div className="ml-2 text-xl">4.5</div>
+              <div className="ml-2 text-xl">{avgstar}</div>
             </div>
           </div>
 
@@ -162,25 +174,26 @@ function Post() {
       <div className="min-h-screen">
       <div  className='fade feartured-items min-h-screen   '>
         <div className='text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
-          Books you may like
+          Books you may like !!!TODO write a backend for related products
         </div>
             
         <div  className=''>
+
         
-          <Product productTitles={["A Game of Thrones",
+        <Product productTitles={["A Game of Thrones",
                                    "A Clash of Kings",
                                    "A Storm of Swords",
                                    "A Feast for Crows",
                                    "A Dance with Dragons",
                                    "The Silmarillion",
                                    "The Hobbit",
-                                   "The Fellowship Of The Ring",
+                                   "The Fellowship of the Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",
+                                   "The Return of the King",
                                    "Harry Potter and the Sorcerer's Stone",
                                    "Harry Potter and the Chamber of Secrets",
                                    "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
+                                   "Harry Potter and the Goblet of Fire" ]} />
         </div>
       </div>
 

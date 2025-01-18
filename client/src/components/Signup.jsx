@@ -15,11 +15,17 @@ function Signup() {
   const create = async (data) => {
     setError("");
     try {
-      const userData = await authService.createAccount(data);
-      if (userData) {
-        const userData = await authService.getCurrentUser();
-        if (userData) dispatch(login(userData));
-        navigate("/");
+      const userData = await authService.createAccount(data);//creating user
+      if (userData?.statusCode === 200) {
+        const userData = await authService.login(data);//logging in user
+        if (userData.statusCode===200){
+        const userData = await authService.getCurrentUser();//getting current user
+        if (userData.statusCode===200) {
+         dispatch(login(userData));
+         navigate("/");
+        }
+         
+        }
       }
     } catch (error) {
       navigate("/");
@@ -77,6 +83,12 @@ function Signup() {
               {...register("password", {
                 required: true,
               })}
+            />
+            <Input
+              label=" "
+              type="select"
+              placeholder="choose your avatar"
+              {...register("avatar")}
             />
 
             <Button type="submit" className="w-full bg-iphone-black text-iphone-white hover:bg-iphone-white hover:text-iphone-black duration-150 hover:duration-150 ">

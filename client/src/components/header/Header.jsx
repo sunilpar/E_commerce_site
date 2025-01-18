@@ -7,16 +7,17 @@ import logo from "../../assets/book_logo.png";
 import conf from "../../conf/conf";
 
 
+
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);
   const itemno = useSelector((state) => state.cart.productIds.length);
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
-
-  const isAdmin = userData && userData.$id == conf.adminId ? true : undefined;
+  
+  const isAdmin = userData && userData.data._id == conf.adminId ? true : undefined;
   const navItems = [
     {
-      name: "Add product",
+      name: "Add_book",
       slug: "/Addproduct",
       active: isAdmin,
     },

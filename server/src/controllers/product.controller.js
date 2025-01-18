@@ -41,7 +41,7 @@ const createProduct = asyncHandler(async (req, res) => {
 
     return res
       .status(201)
-      .json(new ApiResponse(201, product, "Product created successfully"));
+      .json(new ApiResponse(201, req.body, "Product created successfully"));
   } else {
     throw new ApiError(
       401,
@@ -90,7 +90,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     return res
       .status(200)
       .json(
-        new ApiResponse(200, updatedProduct, "Product updated successfully")
+        new ApiResponse(200, req.body, "Product updated successfully")
       );
   } else {
     throw new ApiError(
@@ -101,7 +101,6 @@ const updateProduct = asyncHandler(async (req, res) => {
 });
 
 const getProduct = asyncHandler(async (req, res) => {
-  // const id = "67874e7eacb303d2c6ec8aa4";
   const id = req.body.id;
 
   if (!id) {
@@ -164,6 +163,34 @@ const getProducts = asyncHandler(async (req, res) => {
   return res
     .status(200)
     .json(new ApiResponse(200, products, "Products fetched successfully"));
+});
+
+const getProductsWithId = asyncHandler(async (req, res) => {
+  const ids = req.body.ids;
+  if (!ids) {
+    throw new ApiError(400, "id is required");
+  }
+  function parseid(input) {
+    return (
+      input
+        .match(/"([^"]+)"/g)
+        ?.map((id) => id.replace(/"/g, "").trim()) || []
+    );
+  }
+
+  const id = parseid(ids);
+
+  const products = await Product.find({
+    _id: { $in: id },
+  });
+
+  if (!products) {
+    throw new ApiError(404, "Product by id not found");
+  }
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, products, "Products by ids fetched successfully"));
 });
 
 const searchSuggestion = asyncHandler(async (req, res) => {
@@ -246,6 +273,8 @@ const searchPage = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, products, "Query fetched successfully"));
 });
 
+
+
 export {
   createProduct,
   updateProduct,
@@ -253,4 +282,5 @@ export {
   getProducts,
   searchSuggestion,
   searchPage,
+  getProductsWithId
 };

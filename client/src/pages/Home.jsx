@@ -7,7 +7,7 @@ import fantasy from '../assets/fantasy.png'
 import Romance from '../assets/Romance.png'
 import philosophy from '../assets/philosophy.png'
 import kids from '../assets/kids.png'
-import Religion from '../assets/Religion.png'
+import Manga from '../assets/Manga.png'
 import Biography from '../assets/Biography.png'
 import Horror from '../assets/Horror.png'
 import History from '../assets/History.png'
@@ -31,13 +31,13 @@ function Home() {
                                    "A Dance with Dragons",
                                    "The Silmarillion",
                                    "The Hobbit",
-                                   "The Fellowship Of The Ring",
+                                   "The Fellowship of the Ring",
                                    "The Two Towers",
-                                   "The Return Of The King",
+                                   "The Return of the King",
                                    "Harry Potter and the Sorcerer's Stone",
                                    "Harry Potter and the Chamber of Secrets",
                                    "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
+                                   "Harry Potter and the Goblet of Fire" ]} />
         </div>
       </div>
 
@@ -114,16 +114,16 @@ function Home() {
                   </a>
                 </div>
                 <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105'>
-                <a  href="#Religion-books">
+                <a  href="#Manga-books">
                     <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
-                        className="absolute inset-0 h-[151px] w-[279px] object-cover "
-                        src={Religion}
+                        className="absolute inset-[9px] h-[140px] w-[233px] object-cover "
+                        src={Manga}
                         alt=""
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
                       <h3 class="z-10 mt-[-20px] text-3xl font-bold text-iphone-white text-left">
-                      Religion & sprituality
+                      Manga & Comics
                       </h3>
                     </article>
                   </a>
@@ -205,21 +205,15 @@ function Home() {
         Fiction Books
         </div>
         <div className='fade  bg-skin-green mb-6 rounded-3xl ' >
-        
-        <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship Of The Ring",
-                                   "The Two Towers",
-                                   "The Return Of The King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
+        <Product productTitles={["Origin",
+                                "Children of Dune",
+                                "Dune",
+                                "The Kill Order",
+                                "God Emperor of Dune",
+                                "Dune Messiah",
+                                "Children of Dune",
+                                ""
+         ]} />
         </div>
       </div>
 
@@ -228,20 +222,14 @@ function Home() {
           Fantasy Books
         </div>
         <div className='fade  bg-[#1e160a] rounded-3xl mb-6' >
-        <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship Of The Ring",
-                                   "The Two Towers",
-                                   "The Return Of The King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
+        <Product productTitles={["The Silmarillion",
+                                "Harry Potter and the Deathly Hallows",
+                                "One Piece",
+                                "Harry Potter and the Half-Blood Prince",
+                                "Berserk",
+                                "Vinland Saga",
+                                "A Dance with Dragons",
+         ]} />
         </div>
       </div>
 
@@ -249,22 +237,11 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28  '>
           Romance Books
         </div>
-        <div className='fade bg-[#310a12]  rounded-3xl mb-6' >
-        
-        <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship Of The Ring",
-                                   "The Two Towers",
-                                   "The Return Of The King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
+        <div className='fade bg-[#69002c]  rounded-3xl mb-6' >
+        <Product productTitles={["Fifty Shades Of Grey",
+                                "Fifty Shades Darker",
+                                "Fifty Shades Freed",
+         ]} />
         </div>
       </div>
 
@@ -273,20 +250,12 @@ function Home() {
           Kids Books
         </div>
         <div className='fade  bg-[#310a12] rounded-3xl mb-6' >
-        <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship Of The Ring",
-                                   "The Two Towers",
-                                   "The Return Of The King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
+        <Product productTitles={["The Hobbit",
+                                "One Piece",
+                                "Harry Potter and the Deathly Hallows",
+                                "Harry Potter and the Sorcerer's Stone",
+                                "The Fellowship of the Ring",
+         ]} />
         </div>
       </div>
 
@@ -294,22 +263,13 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
           Horror Books
         </div>
-        <div className='fade  bg-[#310a12] rounded-3xl mb-6' >
-        
-        <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship Of The Ring",
-                                   "The Two Towers",
-                                   "The Return Of The King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
+        <div className='fade  bg-[#280000] rounded-3xl mb-6' >
+        <Product productTitles={["The Maze Runner",
+                                "The Scorch Trials",
+                                "The Kill Order",
+                                "Berserk",
+         ]} />
+       
         </div>
       </div>
 
@@ -319,43 +279,24 @@ function Home() {
         </div>
         <div className='fade  bg-[#310a12] rounded-3xl mb-6' >
         
-        <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship Of The Ring",
-                                   "The Two Towers",
-                                   "The Return Of The King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
+        <Product productTitles={["In the Buddha's Words",
+                                "Discourses and Selected Writings of Epictetus",
+         ]} />
         </div>
       </div>
 
-       <div id='Religion-books' className=' feartured-items   '>
+       <div id='Manga-books' className=' feartured-items   '>
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
-        Religion & sprituality Books
+        Manga & Comics
         </div>
-        <div className='fade  bg-[#310a12] rounded-3xl mb-6' >
+        <div className='fade  bg-[#005965] rounded-3xl mb-6' >
         
-        <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship Of The Ring",
-                                   "The Two Towers",
-                                   "The Return Of The King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
+        <Product productTitles={["Berserk",
+                                "One Piece",
+                                "Kagurabachi",
+                                "Vinland Saga",
+                                "Jujutsu Kaisen Vol 30",
+         ]} />
         </div>
       </div>
 
@@ -365,20 +306,7 @@ function Home() {
         </div>
         <div className='fade  bg-[#310a12] rounded-3xl mb-6' >
         
-        <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship Of The Ring",
-                                   "The Two Towers",
-                                   "The Return Of The King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
+        <Product productTitles={["American Prometheus",]} />
         </div>
       </div>
 
@@ -386,22 +314,16 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
         History Books
         </div>
-        <div className='fade bg-gradient-to-b from-[#310a12] from-20% to-full-black to-50% rounded-3xl min-h-screen' >
+        <div className='fade bg-gradient-to-b from-[#310a12] from-20% to-full-black to-50% rounded-3xl ' >
+        <Product productTitles={["How Rome Fell",
+                                "American Prometheus",
+                                "",
+                                "",
+                                "",
+                                "",
+                                "",
+         ]} />
         
-        <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship Of The Ring",
-                                   "The Two Towers",
-                                   "The Return Of The King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire",]}  />
         </div>
       </div>
 

@@ -1,31 +1,26 @@
 import React, { useCallback,useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input } from "../index";
-import service from "../../appwrite/config";
+import Service from "../../appwrite/config";
 
-export default function ProductForm() {
+export default function ProductForm({product}) {
     const { register, handleSubmit} = useForm({
         defaultValues: {
-            Title: "",
-            CoverImage:"",
-            Description:"",
-            Pdf: 0,
-            Audio:0,
-            Tags:"",
+            Title: product.Title ,
+            CoverImage: product.CoverImage,
+            Description: product.Description,
+            Pdf:product.Pdf,
+            Audio:product.Audio,
+            Tags:product.Tags,
         },
     });    
     const submit = async (data) => {
-        console.log(data,"data from form");
-        data.Pdf = parseFloat(data.Pdf);
-        data.Audio = parseFloat(data.Audio);
-        const dbPost = await service.createProduct({...data});
-        console.log(dbPost,"return from created product");
-        
-        if (dbPost) {
-            console.log("Product created successfully");
-        }       
+            const dbPost = await Service.updateProduct(product._id, {...data});
+            if (dbPost.statusCode === 200) {
+                console.log("Updated Product:", dbPost);
+            }
+      
     };
-    
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap text-iphone-white">
             <div className="w-2/3 px-2 ">
@@ -68,10 +63,16 @@ export default function ProductForm() {
                     label="Audio price:"
                     type="number"
                     className="mb-4"
-                    {...register("Audio")}
+                    {...register("Audio", { required: (product.Audio!==0) })}
                 />
-                <Button type="submit" className="w-full">
-                    submit
+                    <div className="w-full mb-4">
+                        <img
+                            src={product.CoverImage}
+                            className="rounded-lg"
+                        />
+                    </div>
+                <Button type="submit" bgColor="bg-skin-green" className="w-full">
+                    update
                 </Button>
             </div>
         </form>

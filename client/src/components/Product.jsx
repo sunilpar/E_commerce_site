@@ -1,36 +1,38 @@
-import React, {useState, useEffect} from 'react'
-import { Container } from '../components'
-import appwriteService from "../appwrite/config";
+import React, { useState, useEffect } from 'react';
+import service from "../appwrite/config";
 import Book from "../components/Book";
-import { Query} from "appwrite";
+
+function Product({ productTitles }) {
+  const [product, setProduct] = useState([]);
+  
+
+  const strTitles = Array.isArray(productTitles)
+    ? productTitles.map(item => `"${item}"`).join(',')
+    : productTitles;
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const getproducts = await service.getProducts(strTitles);
+        setProduct(getproducts.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    })();
+  }, [strTitles]);
 
 
-function Product(productTitles) {
-    const [product, setProduct] = useState([])
- 
-    const allTitles = Object.values(productTitles).flat();
-    
-    
-    useEffect(() => {
-        appwriteService.getProducts([Query.contains("Product_Title", allTitles)]).then((product) => {
-            if (product) {
-                setProduct(product.documents);
-            }
-        })
-    }, [])
-
-    
-    return (
-        <div className='w-full py-8 '>
-        <div  className='flex flex-row flex-wrap justify-center '>
-        {product.map((product) => (
-            <div className=' w-fit h-fit '>
-                <Book {...product}/>
-            </div>
+  return (
+    <div className='w-full py-8'>
+      <div className='flex flex-row flex-wrap justify-center'>
+        {product.map((productItem) => (
+          <div key={productItem._id} className='w-fit h-fit'>
+            <Book {...productItem} />
+          </div>
         ))}
-            </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;

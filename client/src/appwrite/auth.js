@@ -1,68 +1,56 @@
 import conf from "../conf/conf.js";
-import { Client, Account, ID} from "appwrite";
+import AxiosHelper from "../utils/axios.helper.js";
 
 export class AuthService {
-  client = new Client();
-  account;
 
-  constructor() {
-    this.client.setEndpoint(conf.appwriteUrl).setProject(
-      conf.appwriteProjectId
-    );
-
-    this.account = new Account(this.client);
-  }
-
-  async createAccount({email, password, name}) {
+  async createAccount({email, password, name, avatar}) {
     try {
-      const userAccount = await this.account.create(
-        ID.unique(),
-        email,
-        password,
-        name
-      );
-
-      if (userAccount) {
-        // calling another method to login
-        return this.login(email, password);
-      } else {
-        return userAccount;
-      }
+      const data = { 
+        FullName: name,
+        Email: email,
+        Password: password,
+        Avatar: avatar
+       };
+      return await AxiosHelper("/api/user/register", data, "post");
     } catch (error) {
-      throw error;
+      console.error("error while creating user:", error);
     }
   }
 
 
   async login({email, password}) {
     try {
-        return await this.account.createEmailPasswordSession(email, password);
+      const data = { 
+        Email: email,
+        Password: password
+       };
+      return await AxiosHelper("/api/user/login", data, "post");
     } catch (error) {
-        throw error;
+      console.error("error while logging in:", error);
     }
 }
 
 
   async getCurrentUser(){
     try {
-        return await this.account.get();
-        
+      const data = {};
+       return await AxiosHelper("/api/user/current-user", data, "get");
     } catch (error) {
-        console.log("Appwrite service ::getcurrentuser :: error: ", error);
+      console.error("Error fetching user:", error);
     }
-
     return null;
   }
 
   async logout(){
     try {
-        return await this.account.deleteSessions();
+      const data = { 
+
+       };
+       return await AxiosHelper("/api/user/logout", data, "post");
     } catch (error) {
-        console.log("Appwrite service :: logout :: error: ", error);
+      console.error("Error while logging out user:", error);
     }
   }
-
-
 }
 const authService = new AuthService();
 export default authService;

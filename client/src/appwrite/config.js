@@ -1,136 +1,98 @@
 import conf from "../conf/conf.js";
 import { Client, ID, Databases, Query, Storage } from "appwrite";
+import AxiosHelper from "../utils/axios.helper.js";
 
 export class Service {
-  client = new Client();
-  databases;
-  bucket;
-
-  constructor() {
-    this.client
-      .setEndpoint(conf.appwriteUrl)
-      .setProject(conf.appwriteProjectId);
-
-    this.databases = new Databases(this.client);
-    this.bucket = new Storage(this.client);
-  }
-
-  async createProduct({Product_Title, Description, Cover_Img, Review_Id, Book_Type ,Price,Tags:[], }) {
+  async createProduct({Title,CoverImage, Description, Pdf ,Audio,Tags, }) {
     try {
-      return await this.databases.createDocument(
-        conf.appwriteDatabaseId,
-        conf.appwriteCollectionId1,
-        ID.unique(),
-        {
-          Product_Id:ID.unique(),
-          Product_Title,
-          Description,
-          Cover_Img,
-          Book_Type,
-          Price,
-          Review_Id,
-          Tags:[],
-        }
-      );
+      const data = { 
+        Title,
+        CoverImage,
+        Description,
+        Pdf,
+        Audio,
+        Tags
+       };
+      return await AxiosHelper("/api/product/create-product", data, "post");
     } catch (error) {
-      console.log("Appwrite service :: createProduct :: error: ", error);
+      console.error("error while creating product:", error);
     }
   }
 
-  async updateProduct(Product_Id, { Product_Title, Description,Review_Id, Cover_Img, Book_Type,Price,Tags:[], }) {
+  async updateProduct(Product_Id, { Title, Description,CoverImage, Pdf, Audio,Tags}) {
     try {
-      return await this.databases.updateDocument(
-        conf.appwriteDatabaseId,
-        conf.appwriteCollectionId1,
+      const data = { 
         Product_Id,
-        {
-          Product_Title,
-          Description,
-          Cover_Img,
-          Book_Type,
-          Review_Id,
-          Price,
-          Tags:[],
-        }
-      );
+        Title,
+        Description,
+        CoverImage,
+        Pdf,
+        Audio,
+        Tags
+       };
+      return await AxiosHelper("/api/product/update-product", data, "post");
     } catch (error) {
-      console.log("Appwrite service :: updateProduct :: error: ", error);
+      console.error("error while updating product :", error);
     }
   }
-
-  async deleteProduct(Product_Id) {
-    try {
-      await this.databases.deleteDocument(
-        conf.appwriteDatabaseId,
-        conf.appwriteCollectionId1,
-        Product_Id
-      );
-      return true;
-    } catch (error) {
-      console.log("Appwrite service :: deleteProduct :: error: ", error);
-      return false;
-    }
-  }
-
 
 
   async getProduct(Product_Id) {
     try {
-      return await this.databases.getDocument(
-        conf.appwriteDatabaseId,
-        conf.appwriteCollectionId1, 
-        Product_Id
-      );
+      const data = { 
+        id:Product_Id
+       };
+      return await AxiosHelper("/api/product/get-product", data, "post");
     } catch (error) {
-      console.log("Appwrite service :: getPost :: error: ", error);
-      return false;
+      console.error("error while fetching product :", error);
     }
   }
 
-  async getProducts(queries) {
+  async getProducts(Titles) {
     try {
-      return await this.databases.listDocuments(
-        conf.appwriteDatabaseId,
-        conf.appwriteCollectionId1,
-        queries
-      );
+      const data = { 
+        Titles
+       };
+      return await AxiosHelper("/api/product/get-products", data, "post");
     } catch (error) {
-      console.log("Appwrite service :: getPosts :: error: ", error);
-      return false;
+      console.error("error while fetching products by titles :", error);
     }
   }
 
-  //file upload services
-
-  async uploadFile(file) {
+  async searchProductWithSuggestion(query) {
     try {
-      return await this.bucket.createFile(
-        conf.appwriteBucketId1,
-        ID.unique(),
-        file
-      );
+      const data = { 
+        query
+       };
+      return await AxiosHelper("/api/product/get-suggestions", data, "post");
     } catch (error) {
-      console.log("Appwrite service :: uploadFile :: error: ", error);
-      return false;
+      console.error("error while searching products from given query :",query,"error:", error);
     }
   }
-
-  async deleteFile(fileId) {
+  async searchPage(query) {
     try {
-      await this.bucket.deleteFile(conf.appwriteBucketId1, fileId);
-      return true;
+      const data = { 
+        query
+       };
+      return await AxiosHelper("/api/product/get-searchpage", data, "post");
     } catch (error) {
-      console.log("Appwrite service :: deleteFile :: error: ", error);
-      return false;
+      console.error("error while searching products page from:",query,"error:", error);
     }
   }
 
-  getFilePreview(fileId){
-    return this.bucket.getFilePreview(
-        conf.appwriteBucketId1,
-        fileId
-    )
-}
+
+  async getProductsByid(ids) {
+    try {
+      const data = { 
+        ids
+       };
+       
+      return await AxiosHelper("/api/product/get-Byids", data, "post");
+    } catch (error) {
+      console.error("error while fetching products by ids:", error);
+    }
+  } 
+  
 }
 
 const service = new Service();

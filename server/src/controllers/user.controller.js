@@ -110,10 +110,10 @@ const registerUser = asyncHandler( async (req, res) => {
     }
 
     return res.status(201).json(
-        new ApiResponse(200,createdUser, "User registered Successfully")
+        new ApiResponse(200,req.body, "User registered Successfully")
     )
 
-} )//known bug cant send from data using post.formdata but can with {x-www form urlencoded}
+} )
 
 const loginUser = asyncHandler(async (req, res) =>{
     const {Email, Password} = req.body
@@ -151,8 +151,8 @@ const loginUser = asyncHandler(async (req, res) =>{
     .cookie("RefreshToken", RefreshToken, options)
     .json(
         new ApiResponse(
-            200, 
-            {
+            200,
+            {  
                 user: loggedInUser, AccessToken, RefreshToken
             },
             "User logged In Successfully"
