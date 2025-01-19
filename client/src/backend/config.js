@@ -1,5 +1,3 @@
-import conf from "../conf/conf.js";
-import { Client, ID, Databases, Query, Storage } from "appwrite";
 import AxiosHelper from "../utils/axios.helper.js";
 
 export class Service {

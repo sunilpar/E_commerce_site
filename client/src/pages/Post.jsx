@@ -1,14 +1,12 @@
 import React from "react";
-import Product from "../components/Product.jsx";
+import Product from "../components/product/Product.jsx"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import service from "../appwrite/config";
+import service from "../backend/config";
 import Button from "../components/Button";
 import conf from "../conf/conf";
-import { Query } from "appwrite";
-import { Select } from "../components";
 import { addToCart } from "../store/cartSlice.js";
 import { Link } from "react-router-dom";
 

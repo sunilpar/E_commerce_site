@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import service from "../appwrite/config";
-import Book from "../components/Book";
+import React, { useState, useEffect } from "react";
+import service from "../../backend/config";
+import Book from "./Book";
 
 function Product({ productTitles }) {
   const [product, setProduct] = useState([]);
-  
 
   const strTitles = Array.isArray(productTitles)
-    ? productTitles.map(item => `"${item}"`).join(',')
+    ? productTitles.map((item) => `"${item}"`).join(",")
     : productTitles;
 
   useEffect(() => {
@@ -21,12 +20,11 @@ function Product({ productTitles }) {
     })();
   }, [strTitles]);
 
-
   return (
-    <div className='w-full py-8'>
-      <div className='flex flex-row flex-wrap justify-center'>
+    <div className="w-full py-8">
+      <div className="flex flex-row flex-wrap justify-center">
         {product.map((productItem) => (
-          <div key={productItem._id} className='w-fit h-fit'>
+          <div key={productItem._id} className="w-fit h-fit">
             <Book {...productItem} />
           </div>
         ))}

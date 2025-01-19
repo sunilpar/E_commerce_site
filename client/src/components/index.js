@@ -8,7 +8,7 @@ import LogoutBtn from "./header/Logoutbtn"
 import Footer from "./footer/Footer"
 import ProductForm from "./productform/Productform"
 import AuthLayout from "./AuthLayout"
-import Select from "./Select"
+import Select from "./search/Select"
 
 
 

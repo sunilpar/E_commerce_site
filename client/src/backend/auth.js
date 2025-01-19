@@ -1,4 +1,3 @@
-import conf from "../conf/conf.js";
 import AxiosHelper from "../utils/axios.helper.js";
 
 export class AuthService {

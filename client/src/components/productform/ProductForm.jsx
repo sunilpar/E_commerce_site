@@ -1,7 +1,7 @@
 import React, { useCallback,useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input } from "../index";
-import service from "../../appwrite/config";
+import service from "../../backend/config";
 
 export default function ProductForm() {
     const { register, handleSubmit} = useForm({

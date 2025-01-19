@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
-import service from "../appwrite/config";
 import { Link } from "react-router-dom";
-import Button from "./Button";
-import { addToCart } from "../store/cartSlice.js";
+import { addToCart } from "../../store/cartSlice.js";
 import { useSelector, useDispatch } from "react-redux";
-function Book({ Title, CoverImage, Pdf,Audio ,_id}) {
+function Searchbook({ Title, CoverImage, Pdf, Audio, _id }) {
   const id = _id;
-  const dispatch = useDispatch(); 
-   const handleCart = (id) => {
-     dispatch(addToCart(id));
+  const dispatch = useDispatch();
+  const handleCart = (id) => {
+    dispatch(addToCart(id));
   };
 
   return (
-    <div >
+    <div>
       <div className="w-[220px] min-h-[374px]  rounded-xl p-2 flex items-center flex-col hover:scale-105">
         <div className="w-[210px] h-[300px]   mb-7  flex ">
           {CoverImage ? (
@@ -24,10 +22,11 @@ function Book({ Title, CoverImage, Pdf,Audio ,_id}) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-full-black  opacity-80"></div>
               <Link to={`/post/${id}`}>
-                 <div className="absolute inset-0 "></div>
+                <div className="absolute inset-0 "></div>
               </Link>
               <h3 className="z-10 mt-3 flex  text-lg bold text-left font-bold text-iphone-white top-o ">
-                {Title || "Untitled"}<br />
+                {Title || "Untitled"}
+                <br />
               </h3>
 
               <h3 className="z-10 mt-3 mb-3 flex text-sm italic thin font-extralight text-iphone-white">
@@ -69,8 +68,9 @@ function Book({ Title, CoverImage, Pdf,Audio ,_id}) {
                     </g>
                   </svg>
                 </div>
-                <div>4.5</div>
-
+                <div className="font-bold">
+                  {Math.floor(Math.random() * 5) + 1}
+                </div>
                 <button
                   className="ml-6 rounded-lg px-[5px] py-[2px]  bg-iphone-black text-iphone-white hover:bg-full-black hover:text-iphone-black duration-150 hover:duration-150"
                   onClick={() => handleCart(id)}
@@ -121,4 +121,4 @@ function Book({ Title, CoverImage, Pdf,Audio ,_id}) {
   );
 }
 
-export default Book;
+export default Searchbook;

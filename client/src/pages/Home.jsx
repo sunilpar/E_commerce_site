@@ -1,7 +1,7 @@
 import React from 'react'
+import Hero from '../components/header/Hero'
+import Product from '../components/product/Product'
 //pngs
-import Hero from '../components/Hero'
-import Product from '../components/Product'
 import fiction from '../assets/fiction.png'
 import fantasy from '../assets/fantasy.png'
 import Romance from '../assets/Romance.png'
@@ -24,20 +24,20 @@ function Home() {
           Featured Items
         </div> 
         <div  className=''>
-          <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship of the Ring",
-                                   "The Two Towers",
+          <Product productTitles={["Vinland Saga",
+                                   "Jujutsu Kaisen Vol 30",
                                    "The Return of the King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
+                                   "A Dance with Dragons",
+                                   "Kagurabachi",
                                    "Harry Potter and the Prisoner of Azkaban",
                                    "Harry Potter and the Goblet of Fire" ]} />
+
+          <Product productTitles={["One Piece",
+                                   "Harry Potter and the Deathly Hallows",
+                                   "Harry Potter and the Half-Blood Prince",
+                                   "Dune Messiah",
+                                   "Berserk",
+                                    ]} />
         </div>
       </div>
 

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { clearOrder} from "../store/orderSlice.js";
-import service from "../appwrite/config";
-import CartItem from "../components/CartItem";
+import service from "../backend/config";
+import CartItem from "../components/cart/CartItem";
 import { clearCart } from "../store/cartSlice.js";
-import { Query } from "appwrite";
 import Button from "../components/Button";
 import Input from "../components/Input.jsx";
 

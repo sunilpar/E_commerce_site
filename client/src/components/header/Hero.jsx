@@ -5,12 +5,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 
 //pngs
-import heropng from "../assets/heroGradient.png";
-import hero11 from "../assets/hero11.png";
-import hero22 from "../assets/hero22.png";
-import hero44 from "../assets/hero44.jpg";
-import hero55 from "../assets/hero55.jpg";
-import hero6 from "../assets/hero6.jpg";
+import heropng from "../../assets/heroGradient.png";
+import hero11 from "../../assets/hero11.png";
+import hero22 from "../../assets/hero22.png";
+import hero44 from "../../assets/hero44.jpg";
+import hero55 from "../../assets/hero55.jpg";
+import hero6 from "../../assets/hero6.jpg";
 
 function Hero() {
 
