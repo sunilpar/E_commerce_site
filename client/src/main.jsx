@@ -12,9 +12,10 @@ import ProductForm from "./components/productform/Productform.jsx"
 import Home from "./pages/Home.jsx"
 import Cart from './pages/Cart.jsx'
 import Post from './pages/Post.jsx'
+import Search from './pages/Search.jsx'
 
 //test 
-import Test from './components/test.jsx'
+import Test from './components/Test.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         {
             path: "/post/:id",
             element: <Post />,
+        },
+        {
+            path: "/Search/:id",
+            element: <Search />,
         },
         {
             path: "/test",

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../store/cartSlice.js";
 import { useSelector, useDispatch } from "react-redux";
-function Searchbook({ Title, CoverImage, Pdf, Audio, _id }) {
+function Searchbook({ Title, CoverImage, Pdf, Audio, _id ,Description}) {
   const id = _id;
   const dispatch = useDispatch();
   const handleCart = (id) => {
@@ -11,7 +11,10 @@ function Searchbook({ Title, CoverImage, Pdf, Audio, _id }) {
 
   return (
     <div>
-      <div className="w-[220px] min-h-[374px]  rounded-xl p-2 flex items-center flex-col hover:scale-105">
+      {/* w-[780px] h-[346px] */}
+      <div className="">
+        {/* single book */}
+        <div className="w-[220px] min-h-[374px]  rounded-xl p-2 flex items-center flex-col hover:scale-105">
         <div className="w-[210px] h-[300px]   mb-7  flex ">
           {CoverImage ? (
             <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-lg p-6 pt-72 pb-8  max-w-sm mx-auto mt-2     ">
@@ -117,6 +120,8 @@ function Searchbook({ Title, CoverImage, Pdf, Audio, _id }) {
           )}
         </div>
       </div>
+      </div>
+      
     </div>
   );
 }

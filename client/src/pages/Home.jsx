@@ -24,15 +24,15 @@ function Home() {
           Featured Items
         </div> 
         <div  className=''>
-          <Product productTitles={["Vinland Saga",
-                                   "Jujutsu Kaisen Vol 30",
-                                   "The Return of the King",
-                                   "A Dance with Dragons",
-                                   "Kagurabachi",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire" ]} />
-
           <Product productTitles={["One Piece",
+                                   "Jujutsu Kaisen Vol 30",
+                                   "Red Eclipse",
+                                   "A Dance with Dragons",
+                                   "The Time of Contempt",
+                                   "Harry Potter and the Prisoner of Azkaban",
+                                   "The Last Wish" ]} />
+
+          <Product productTitles={["Vinland Saga",
                                    "Harry Potter and the Deathly Hallows",
                                    "Harry Potter and the Half-Blood Prince",
                                    "Dune Messiah",
@@ -204,14 +204,13 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
         Fiction Books
         </div>
-        <div className='fade  bg-skin-green mb-6 rounded-3xl ' >
+        <div  className='fade animated-background bg-gradient-to-r from-[#212901] via-[#004137] to-[#00452d] mb-6 rounded-3xl ' >
         <Product productTitles={["Origin",
-                                "Children of Dune",
+                                "The Dark Forest",
                                 "Dune",
                                 "The Kill Order",
                                 "God Emperor of Dune",
                                 "Dune Messiah",
-                                "Children of Dune",
                                 ""
          ]} />
         </div>
@@ -221,7 +220,7 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
           Fantasy Books
         </div>
-        <div className='fade  bg-[#1e160a] rounded-3xl mb-6' >
+        <div className='fade   animated-background bg-gradient-to-r from-[#292501] via-[#413500] to-[#452600] rounded-3xl mb-6' >
         <Product productTitles={["The Silmarillion",
                                 "Harry Potter and the Deathly Hallows",
                                 "One Piece",
@@ -237,7 +236,7 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28  '>
           Romance Books
         </div>
-        <div className='fade bg-[#69002c]  rounded-3xl mb-6' >
+        <div className='fade bg-[#db2778] animated-background bg-gradient-to-r from-[#6a0074] via-[#8e006d] to-[#8e003b]  rounded-3xl mb-6' >
         <Product productTitles={["Fifty Shades Of Grey",
                                 "Fifty Shades Darker",
                                 "Fifty Shades Freed",
@@ -249,7 +248,7 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
           Kids Books
         </div>
-        <div className='fade  bg-[#310a12] rounded-3xl mb-6' >
+        <div className='fade  bg-[#310a12] animated-background bg-gradient-to-r from-[#00524e] via-[#001f55] to-[#67005d] rounded-3xl mb-6' >
         <Product productTitles={["The Hobbit",
                                 "One Piece",
                                 "Harry Potter and the Deathly Hallows",
@@ -263,7 +262,7 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
           Horror Books
         </div>
-        <div className='fade  bg-[#280000] rounded-3xl mb-6' >
+        <div className='fade animated-background bg-gradient-to-r from-[#670000] via-[#9c001a] to-[#4a0015] rounded-3xl mb-6' >
         <Product productTitles={["The Maze Runner",
                                 "The Scorch Trials",
                                 "The Kill Order",
@@ -277,7 +276,7 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
         Philosophy Books
         </div>
-        <div className='fade  bg-[#310a12] rounded-3xl mb-6' >
+        <div className='fade  animated-background bg-gradient-to-r from-[#4e3700] via-[#533b00] to-[#7c6c00] rounded-3xl mb-6' >
         
         <Product productTitles={["In the Buddha's Words",
                                 "Discourses and Selected Writings of Epictetus",
@@ -289,7 +288,7 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
         Manga & Comics
         </div>
-        <div className='fade  bg-[#005965] rounded-3xl mb-6' >
+        <div className='fade  animated-background bg-gradient-to-r from-[#004e26] via-[#4b0053] to-[#00797c] rounded-3xl mb-6' >
         
         <Product productTitles={["Berserk",
                                 "One Piece",
@@ -304,9 +303,14 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
         Biography Books
         </div>
-        <div className='fade  bg-[#310a12] rounded-3xl mb-6' >
+        <div className='fade  animated-background bg-gradient-to-r from-[#32495c] via-[#5b3a4a] to-[#7c2a00] rounded-3xl mb-6' >
         
-        <Product productTitles={["American Prometheus",]} />
+        <Product productTitles={["American Prometheus",
+                                "Napoleon",
+                                "Leonardo da Vinci",
+                                "Greenlights",
+                                "The Story of My Life"
+        ]} />
         </div>
       </div>
 
@@ -314,14 +318,12 @@ function Home() {
         <div className='fade text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
         History Books
         </div>
-        <div className='fade bg-gradient-to-b from-[#310a12] from-20% to-full-black to-50% rounded-3xl ' >
+        <div className='fade animated-background bg-gradient-to-r from-[#376993] via-[#a44c77] to-[#797e67]  rounded-3xl ' >
         <Product productTitles={["How Rome Fell",
                                 "American Prometheus",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
+                                "Napoleon",
+                                "Leonardo da Vinci",
+                                "The King is Dead"
          ]} />
         
         </div>

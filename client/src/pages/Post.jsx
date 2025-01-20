@@ -9,6 +9,7 @@ import Button from "../components/Button";
 import conf from "../conf/conf";
 import { addToCart } from "../store/cartSlice.js";
 import { Link } from "react-router-dom";
+import Review from "../components/review/Review.jsx";
 
 function Post() {
   const navigate = useNavigate();
@@ -160,12 +161,8 @@ function Post() {
           </div>
         </div>
         {/* reviews */}
-        <div className="flex justify-center ">
-          <div className="bg-iphone-black lg:w-[800px] lg:h-[500px] rounded-lg">
-            <div className="">
-            </div>
-          </div>
-        </div>
+        {id && <Review id={{id}} />}
+
       </div>
 
       {/* related product */}

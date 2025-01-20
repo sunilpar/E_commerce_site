@@ -10,7 +10,7 @@ const router = Router()
 
 router.route("/post-review").post(verifyJWT,createReview)
 router.route("/update-review").patch(verifyJWT,updateReview)
-router.route("/get-reviews").post(verifyJWT,getReviews)
+router.route("/get-reviews").post(getReviews)
 
 
 
