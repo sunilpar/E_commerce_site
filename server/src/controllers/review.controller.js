@@ -11,58 +11,57 @@ const createReview = asyncHandler(async(req, res) => {
                 const {ProductId, star, Comment} = req.body
             
             
-            // if (!ProductId) {
-            //     throw new ApiError(400, "productId is required")
-            // }
+            if (!ProductId) {
+                throw new ApiError(400, "productId is required")
+            }
 
-            // const existedReview = await Review.findOne({
-            //     $and: [{ProductId: ProductId},{UserId: req.user._id}]
-            // })
-            // // console.log(existedReview,"") 
+            const existedReview = await Review.findOne({
+                $and: [{ProductId: ProductId},{UserId: req.user._id}]
+            })
 
 
-            // if(existedReview) {
-            //     throw new ApiError(409, "Review already exist form the same user in this product")
-            // }
+            if(existedReview) {
+                throw new ApiError(409, "Review already exist form the same user in this product")
+            }
 
-            // const username = await User.aggregate([
-            //      {
-            //         $lookup: {
-            //             from: "users",
-            //             localField: "userId",
-            //             foreignField: "_id",
-            //             as: "UserName"
-            //         }
-            //     },
-            //     {
-            //         $match: {
-            //             _id: req.user._id
-            //         }
-            //     },{
-            //         $project: {
-            //             FullName:1,
-            //             Avatar:1,
-            //             _id:0
-            //         }
-            //     } 
-            // ])
-            // const FullName = username[0].FullName
-            // const UserAvatar = username[0].Avatar
+            const username = await User.aggregate([
+                 {
+                    $lookup: {
+                        from: "users",
+                        localField: "userId",
+                        foreignField: "_id",
+                        as: "UserName"
+                    }
+                },
+                {
+                    $match: {
+                        _id: req.user._id
+                    }
+                },{
+                    $project: {
+                        FullName:1,
+                        Avatar:1,
+                        _id:0
+                    }
+                } 
+            ])
+            const FullName = username[0].FullName
+            const UserAvatar = username[0].Avatar
             
 
-            // const review = await Review.create({
-            //     ProductId: ProductId,
-            //     UserId: req.user._id,
-            //     UserName: FullName,
-            //     UserAvatar: UserAvatar,
-            //     Review: Comment,
-            //     Star: star
-            // })
+            const review = await Review.create({
+                ProductId: ProductId,
+                UserId: req.user._id,
+                UserName: FullName,
+                UserAvatar: UserAvatar,
+                Review: Comment,
+                Star: star
+            })
 
-            // const createdReview = await Review.findById(review._id)
-            // if (!createdReview) {
-            //     throw new ApiError(500,"review was not created ")
-            // }
+            const createdReview = await Review.findById(review._id)
+            if (!createdReview) {
+                throw new ApiError(500,"review was not created ")
+            }
 
             return res
             .status(201)

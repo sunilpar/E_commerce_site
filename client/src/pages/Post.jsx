@@ -54,9 +54,9 @@ function Post() {
     <div className=" flex flex-col justify-center min-h-screen flex-wrap mt-6">
       {/* img and titles */}
       <div className="flex flex-row justify-center flex-wrap">
-        <div className="mb-6">
+        <div className="mb-6 flex flex-wrap">
           <img
-            className="w-[343px] h-[541px] rounded-md"
+            className="h-[300px] w-[200px] lg:w-[343px] lg:h-[541px] rounded-md"
             src={fileid}
             alt=""
           />
@@ -154,14 +154,15 @@ function Post() {
       </div>
 
       {/* review */}
-      <div className="min-h-screen">
+      <div className="mb-48">
         <div className="w-full flex justify-center">
           <div className="text-iphone-white text-5xl font-extrabold mb-6 flex justify-start lg:mr-[35.3rem]">
-            Review
+            Reviews
           </div>
+
         </div>
+          {id && <Review id={{id}} />}
         {/* reviews */}
-        {id && <Review id={{id}} />}
 
       </div>
 
@@ -169,7 +170,7 @@ function Post() {
       <div className="min-h-screen">
       <div  className='fade feartured-items min-h-screen   '>
         <div className='text-iphone-white text-5xl font-extrabold mb-4 flex justify-start lg:ml-28 '>
-          Books you may like !!!TODO write a backend for related products
+          Books you may like
         </div>
             
         <div  className=''>

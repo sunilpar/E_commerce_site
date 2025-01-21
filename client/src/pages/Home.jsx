@@ -240,6 +240,8 @@ function Home() {
         <Product productTitles={["Fifty Shades Of Grey",
                                 "Fifty Shades Darker",
                                 "Fifty Shades Freed",
+                                "your name",
+                                "A Silent Voice"
          ]} />
         </div>
       </div>
@@ -280,6 +282,8 @@ function Home() {
         
         <Product productTitles={["In the Buddha's Words",
                                 "Discourses and Selected Writings of Epictetus",
+                                "Ikigai",
+                                "Philosophy 101"
          ]} />
         </div>
       </div>

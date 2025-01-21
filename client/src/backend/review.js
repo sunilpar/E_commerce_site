@@ -2,16 +2,16 @@ import AxiosHelper from "../utils/axios.helper.js";
 
 export class ReviewService{
 
-    async createReview({ProductId, star, comment}) {//test this
+    async createReview({ProductId, star, Comment}) {//test this
         try {
           const data = { 
             ProductId,
             star,
-            Comment: comment
+            Comment
            };
           return await AxiosHelper("/api/review/post-review", data, "post");
         } catch (error) {
-          console.error("error while creating user:", error);
+          console.error("error while creating review:", error);
         }
       }
     
