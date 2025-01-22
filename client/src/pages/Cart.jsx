@@ -6,13 +6,15 @@ import CartItem from "../components/cart/CartItem";
 import { clearCart } from "../store/cartSlice.js";
 import Button from "../components/Button";
 import Input from "../components/Input.jsx";
+import Order from "../components/cart/Order.jsx";
 
 function Cart() {
   const productIds = useSelector((state) => state.cart.productIds);
   const [product, setProduct] = useState([]);
   const dispatch = useDispatch();
   const orders = useSelector(state => state.order.orders);
-
+  
+  
 
   const strIds = Array.isArray(productIds)
   ? productIds.map(item => `"${item}"`).join(',')
@@ -45,17 +47,6 @@ function Cart() {
       <div className="z-10 absolute text-4xl font-extrabold opacity-0 xl:opacity-100 text-iphone-white top-[50px] left-[200px] mt-4">
         <h1>Cart</h1>
       </div>
-      <div className="absolute sm:top-[50px] sm:right-[40px] mt-4 top-[150px] right-[40px]">
-        <Button
-          className="bg-[#700000] text-"
-          onClick={() => dispatch(clearCart(),clearOrder())}
-        >
-          Clear Cart
-        </Button>
-      </div>
-      <div className="absolute top-[100px] right-[40px] sm:top-[50px] sm:right-[160px] mt-4">
-        <Button className=" ">Orders</Button>
-      </div>
       <div className="flex flex-col flex-wrap justify-center ">
         {product.map((product) => (
           <div className="">
@@ -71,46 +62,8 @@ function Cart() {
         ></Input>
       </div>
 
-      {/* orders */}
-      <div className="  bg-iphone-black text-iphone-white rounded-lg flex flex-col justify-center md:mx-[200px] lg:mx-[390px] p-3 opacity-85 mb-6">
-        <table className="w-full text-sm text-left">
-          <tbody>
-            <tr className="  ">
-              <th
-                scope="row"
-                className="px-6 font-bold py-4  text-gray-900 whitespace-nowrap"
-              >
-                Subtotal
-              </th>
-              <td className="px-6 py-4 flex justify-end">Rs {Subtotal}</td>
-            </tr>
-            <tr className="bg-white dark:bg-gray-800">
-              <th
-                scope="row"
-                className="px-6 py-4 font-bold text-gray-900 whitespace-nowrap "
-              >
-                Taxes: Vat 14%
-              </th>
-              <td className="px-6 py-4 flex justify-end">Rs {taxes.toFixed(2)}</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr className="font-semibold text-gray-900 dark:text-white">
-              <th scope="row" className="px-6 py-3 text-base">
-                Total
-              </th>
-              <td className="px-6 py-3 flex justify-end ">Rs {Subtotal+taxes} </td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+      <Order />
 
-      {/* payment */}
-      <div className="">
-        <button className="py-4 px-6 rounded-lg  bg-iphone-black text-iphone-white hover:bg-iphone-white hover:text-iphone-black duration-300 hover:duration-300  text-3xl font-extrabold opacity-85 hover:opacity-80 ">
-          Order Now
-        </button>
-      </div>
     </div>
   );
 }

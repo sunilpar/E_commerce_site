@@ -11,6 +11,7 @@ function CartItem({ product }) {
   const id = product._id;
   const Pdf = product.Pdf;
   const Audio = product.Audio;
+  let price = Audio;
   const dispatch = useDispatch();
   const orders = useSelector((state) => state.order.orders);
 

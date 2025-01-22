@@ -13,6 +13,9 @@ import Home from "./pages/Home.jsx"
 import Cart from './pages/Cart.jsx'
 import Post from './pages/Post.jsx'
 import Search from './pages/Search.jsx'
+import Sucess from './pages/Sucess.jsx'
+import Failure from './pages/Failure.jsx'
+import KhaltiPayment from './pages/KhaltiPayment.jsx'
 
 //test 
 import Test from './components/Test.jsx'
@@ -25,6 +28,18 @@ const router = createBrowserRouter([
         {
             path: "/",
             element: <Home />,
+        },
+        {
+            path: "/Sucess",
+            element: <Sucess />,
+        },
+        {
+            path: "/Failure",
+            element: <Failure />,
+        },
+        {
+            path: "/KhaltiPayment",
+            element: <KhaltiPayment />,
         },
         {
             path: "/post/:id",

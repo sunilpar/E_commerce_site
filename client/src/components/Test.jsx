@@ -1,34 +1,31 @@
 // import React, { useEffect, useState } from "react";
 // import { ToastContainer, toast } from "react-toastify";
-// import service from "../backend/config";
 // import reviewService from "../backend/review";
+// import AxiosHelper from "../utils/axios.helper";
 // import { useSelector, useDispatch } from "react-redux";
+// import { v4 as uuidv4 } from 'uuid';
+// import CryptoJS from 'crypto-js';
 
 
 // function Test() {
-//   const userdata = useSelector((state) => state.auth.userData);
-//   console.log(userdata.data._id, "logged in user id");
-
-//   const fetchData = async () => {
-//     const ProductId="6788a107badcf841e13f4a2d";
-//     const comment="i have read this 5 times now so 5 star it is ";
-//     const star="5";
-//     const getproducts = await reviewService.createReview({ProductId,star,comment})
-//       console.log(getproducts,"getproducts");
-//   }
-
+//   let price = 10;
+//   let uuid = uuidv4();
+//   let message =`total_amount=${price},transaction_uuid=${uuid},product_code=EPAYTEST`
+//   let key = "8gBm/:&EnhH.1/q" 
+//   var hash = CryptoJS.HmacSHA256(message, key);
+//   var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
 
 //   return (
 //     <div className="text-iphone-white">
 //       Test
-//       <button
-//         className="bg-iphone-black text-iphone-white m-5"
-//         onClick={fetchData}
-//       >
-//         fetch data
-//       </button>
-
-//       <ToastContainer position="bottom-right" theme="dark" />
+//       <form action="https://dev.khalti.com/api/v2/epayment/initiate/" method="POST">
+//           <input type="hidden" id="return_url" name="return_url" value="http://localhost:5173/KhaltiPayment" required></input>
+//           <input type="hidden" id="website_url" name="website_url" value ="http://localhost:5173" required></input>
+//           <input type="hidden" id="amount" name="amount" value={price*100} required></input>
+//           <input type="hidden" id="purchase_order_id" name="purchase_order_id" value={uuid} required></input>
+//           <input type="hidden" id="purchase_order_name" name="purchase_order_name" value ="Books" required></input>
+//           <input value="Submit" type="submit"></input>
+//       </form>
 //     </div>
 //   );
 // }
@@ -38,53 +35,75 @@
 
 
 
-
-
-
-
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
-function StarRating({ onRatingChange }) {
-  const [rating, setRating] = useState(0); // Current rating value
+function KhaltiPaymentForm() {
+  const [response, setResponse] = useState(null);
 
-  // Function to handle clicking on a star
-  const handleStarClick = (value) => {
-    setRating(value); // Update rating
-    if (onRatingChange) {
-      onRatingChange(value); // Notify parent component of rating change
+  const handlePayment = async (e) => {
+    e.preventDefault(); // Prevent default form behavior
+
+    // Generate UUID
+    const uuid = uuidv4();
+
+    // Payload data
+    const data = {
+      return_url: "http://localhost:5173/KhaltiPayment",
+      website_url: "http://localhost:5173",
+      amount: 10,
+      purchase_order_id: uuid,
+      purchase_order_name: "Books",
+    };
+
+    try {
+      // Make a POST request
+      const res = await fetch("https://dev.khalti.com/api/v2/epayment/initiate/", {
+        method: "POST",
+        headers: {
+          "Authorization": "YOUR_AUTHORIZATION_TOKEN", // Replace with your token
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json(); // Parse JSON response
+      console.log("Transaction Response:", result);
+      setResponse(result); // Set response to display or further process
+    } catch (error) {
+      console.error("Error:", error);
+      setResponse({ error: "Failed to process the transaction" });
     }
-  };
-
-  // Function to generate star icons
-  const renderStars = () => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <span
-          key={i}
-          onClick={() => handleStarClick(i)}
-          style={{
-            cursor: 'pointer',
-            color: i <= rating ? '#FFD700' : '#E0E0E0', // Gold for selected stars, gray for others
-            fontSize: '24px',
-          }}
-        >
-          ★
-        </span>
-      );
-    }
-    return stars;
   };
 
   return (
-    <div className="star-rating">
-      <div style={{ display: 'inline-flex', gap: '5px' }}>{renderStars()}</div>
-      <div style={{ marginTop: '8px', fontSize: '16px' }}>
-        Rating: {rating} / 5
-      </div>
+    <div className="App text-iphone-white">
+      <h1>Khalti Payment Form</h1>
+      <form onSubmit={handlePayment}>
+        <button type="submit" className="submit-btn">
+          Pay Now
+        </button>
+      </form>
+
+      {/* Display the transaction response */}
+      {response && (
+        <div className="response">
+          <h2>Transaction Response:</h2>
+          <pre>{JSON.stringify(response, null, 2)}</pre>
+        </div>
+      )}
     </div>
   );
 }
 
-export default StarRating;
+export default KhaltiPaymentForm;
+
+
+
+
+
+
+
+
+
 
