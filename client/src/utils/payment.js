@@ -14,7 +14,6 @@ const PaymentService = async ( price, uuid)=> {
       purchase_order_id: uuid,
       purchase_order_name: "Books",
     }
-    console.log(data,"data going to khalti");
     
     
   

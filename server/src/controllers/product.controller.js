@@ -41,7 +41,7 @@ const createProduct = asyncHandler(async (req, res) => {
 
     return res
       .status(201)
-      .json(new ApiResponse(201, req.body, "Product created successfully"));
+      .json(new ApiResponse(201, createdProduct, "Product created successfully"));
   } else {
     throw new ApiError(
       401,
@@ -90,7 +90,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     return res
       .status(200)
       .json(
-        new ApiResponse(200, req.body, "Product updated successfully")
+        new ApiResponse(200, updatedProduct, "Product updated successfully")
       );
   } else {
     throw new ApiError(

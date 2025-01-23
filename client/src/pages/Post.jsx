@@ -51,17 +51,17 @@ function Post() {
  };
 
   return post ? (
-    <div className=" flex flex-col justify-center min-h-screen flex-wrap mt-6">
+    <div className=" flex flex-col justify-center min-h-screen flex-wrap mt-6 ">
       {/* img and titles */}
-      <div className="flex flex-row justify-center flex-wrap">
-        <div className="mb-6 flex flex-wrap">
+      <div className="flex flex-col sm:flex-row justify-center flex-wrap">
+        <div className="mb-6 flex flex-wrap ">
           <img
             className="h-[300px] w-[200px] lg:w-[343px] lg:h-[541px] rounded-md"
             src={fileid}
             alt=""
           />
         </div>
-        <div className="flex flex-col justify-space-between ml-10  mt-6">
+        <div className="flex flex-col sm:justify-space-between ml-5 mt-6 w-[339px]">
           <div className="w-[340px] flex flex-wrap">
             <h1 className="text-4xl text-left font-extrabold text-iphone-white mb-24">
               {title}
@@ -140,14 +140,14 @@ function Post() {
       </div>
 
       {/* description */}
-      <div>
+      <div className="flex flex-col flex-wrap">
         <div className="w-full flex justify-center">
-          <div className="text-iphone-white text-5xl font-extrabold mb-8 flex justify-start lg:mr-[29.3rem]">
+          <div className="text-iphone-white text-5xl font-extrabold mb-8 flex justify-start lg:mr-[29.3rem] ">
             Description
           </div>
         </div>
-        <div className="w-full flex justify-center ">
-          <div className="text-iphone-white text-2xl text-left w-[733px] mb-6">
+        <div className="w-full flex justify-center flex-wrap ">
+          <div className="text-iphone-white text-2xl text-left sm:w-[733px] mb-6">
             {description}
           </div>
         </div>

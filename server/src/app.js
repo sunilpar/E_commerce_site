@@ -16,6 +16,7 @@ app.use(cookieParser())
 import userRouter from "./routes/user.routes.js"
 import productRouter from "./routes/product.routes.js"
 import reviewRouter from "./routes/review.routes.js"
+import paymentRouter from "./routes/payment.routes.js"
 
 
 
@@ -26,6 +27,7 @@ import reviewRouter from "./routes/review.routes.js"
 app.use("/api/user", userRouter)
 app.use("/api/product", productRouter)
 app.use("/api/review", reviewRouter)
+app.use("/api/payment", paymentRouter)
 
 
 

@@ -65,7 +65,7 @@ const createReview = asyncHandler(async(req, res) => {
 
             return res
             .status(201)
-            .json(new ApiResponse(201,req.body , "review was created successfully"));//change
+            .json(new ApiResponse(201,createdReview , "review was created successfully"));//change
 
     })
 

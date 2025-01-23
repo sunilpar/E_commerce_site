@@ -33,8 +33,6 @@
 // export default Test;
 
 
-
-
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -42,12 +40,11 @@ function KhaltiPaymentForm() {
   const [response, setResponse] = useState(null);
 
   const handlePayment = async (e) => {
-    e.preventDefault(); // Prevent default form behavior
+    e.preventDefault(); 
 
-    // Generate UUID
+    
     const uuid = uuidv4();
 
-    // Payload data
     const data = {
       return_url: "http://localhost:5173/KhaltiPayment",
       website_url: "http://localhost:5173",
@@ -57,19 +54,18 @@ function KhaltiPaymentForm() {
     };
 
     try {
-      // Make a POST request
       const res = await fetch("https://dev.khalti.com/api/v2/epayment/initiate/", {
         method: "POST",
         headers: {
-          "Authorization": "YOUR_AUTHORIZATION_TOKEN", // Replace with your token
+          "Authorization": "key live_secret_key_4846eeafae8c4426a7dbe9e54404d650", 
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
 
-      const result = await res.json(); // Parse JSON response
+      const result = await res.json(); 
       console.log("Transaction Response:", result);
-      setResponse(result); // Set response to display or further process
+      setResponse(result); 
     } catch (error) {
       console.error("Error:", error);
       setResponse({ error: "Failed to process the transaction" });

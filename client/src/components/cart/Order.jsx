@@ -2,7 +2,6 @@ import React,{useState}from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
 import CryptoJS from 'crypto-js';
-import PaymentService from "../../utils/payment";
 import KhaltiPayment from '../../pages/KhaltiPayment';
 
 function Order() {
@@ -29,11 +28,6 @@ var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
 
 
 //khalti
-function KhaltiPayment(price,uuid){
-  const response = PaymentService(price,uuid);
-  console.log(response,"res form khalti");
-}
-
 
   return (<>
    <div className="  bg-iphone-black text-iphone-white rounded-lg flex flex-col justify-center md:mx-[200px] lg:mx-[390px] p-3 opacity-85 mb-6">
@@ -81,12 +75,12 @@ function KhaltiPayment(price,uuid){
           <input type="hidden" id="failure_url" name="failure_url" value="http://localhost:5173/Failure" required></input>
           <input type="hidden" id="signed_field_names" name="signed_field_names" value="total_amount,transaction_uuid,product_code" required></input>
           <input type="hidden" id="signature" name="signature" value={hashInBase64} required></input>
-          <input value="Pay Through Esewa" className='py-4 px-6 rounded-lg  bg-iphone-black text-iphone-white hover:bg-iphone-white hover:text-iphone-black duration-300 hover:duration-300  text-3xl font-extrabold opacity-85 hover:opacity-80 ' type="submit"></input>
+          <input value="Pay Through Esewa" className='py-4 px-6 rounded-lg  bg-[#60bb46] text-iphone-black  hover:bg-[#48873d] hover:text-iphone-black duration-300 hover:duration-300  text-3xl font-extrabold opacity-85 hover:opacity-80 ' type="submit"></input>
       </form>
         </div>}
         {!isEmpty &&
           <div className="mb-6">
-        <button onClick={()=>KhaltiPayment(price,uuid)} className="py-4 px-6 rounded-lg  bg-iphone-black text-iphone-white hover:bg-iphone-white hover:text-iphone-black duration-300 hover:duration-300  text-3xl font-extrabold opacity-85 hover:opacity-80 ">
+        <button  className="py-4 px-6 rounded-lg  bg-iphone-black text-iphone-white hover:bg-iphone-white hover:text-iphone-black duration-300 hover:duration-300  text-3xl font-extrabold opacity-85 hover:opacity-80 ">
           Pay Through Khalti
         </button>
       </div>

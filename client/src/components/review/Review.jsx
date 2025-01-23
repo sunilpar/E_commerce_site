@@ -72,13 +72,13 @@ function Review({ id }) {
                 </svg>
                 {review.Star ? review.Star : 0}
               </div>
-              <div className="text-left w-[500px] h-fit">{review.Review}</div>
+              <div className="text-left sm:w-[500px] h-fit">{review.Review}</div>
             </div>
           </div>
         </div>
       ))}
       <div className="flex justify-center">
-        <div className="flex justify-start font-outfit text-left text-2xl font-bold w-[596px]">Write Your Review</div>
+        <div className="flex justify-start font-outfit text-left text-2xl font-bold sm:w-[596px]">Write Your Review</div>
       </div>
       <div>
         <Reviewpost ProductId={id.id} />

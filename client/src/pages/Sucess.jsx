@@ -10,7 +10,7 @@ function Sucess() {
   console.log(obj);
   
   let key = "8gBm/:&EnhH.1/q"
-  let message =`transaction_code=${obj.transaction_code},
+  let message =`transaction_code=${obj.transaction_code}0,
                 status=${obj.status},
                 total_amount=${obj.total_amount},
                 transaction_uuid=${obj.transaction_uuid},
