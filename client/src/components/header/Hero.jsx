@@ -87,11 +87,11 @@ function Hero() {
       </div>
       <div className="flex flex-row gap-5 mb-9 justify-center ">
         {/* books */}
-        <div className="A   rounded-3xl   h-[464px] sm:min-w-[249px] mt-[-50px]  opacity-60"><img src={hero11} className="w-full h-full object-cover rounded-3xl" alt="" /></div>
-        <div className="B position-relative rounded-3xl  h-[464px] sm:min-w-[249px] mt-[50px]  opacity-60"><img src={hero22} className="w-full h-full object-cover rounded-3xl" alt="" /></div>
+        <div className="A   rounded-3xl   h-[464px] min-w-[249px] mt-[-50px]  opacity-60"><img src={hero11} className="w-full h-full object-cover rounded-3xl" alt="" /></div>
+        <div className="B position-relative rounded-3xl  h-[464px] min-w-[249px] mt-[50px]  opacity-60"><img src={hero22} className="w-full h-full object-cover rounded-3xl" alt="" /></div>
         <div className="C rounded-3xl  h-[464px] min-w-[249px] mt-[100px]  opacity-60"><img src={hero6} className="w-full h-full object-cover rounded-3xl" alt="" /></div>
-        <div className="B position-relative rounded-3xl  h-[464px] sm:min-w-[249px] mt-[50px]  opacity-60"><img src={hero55} className="w-full h-full object-cover rounded-3xl" alt="" /></div>
-        <div className="A rounded-3xl  h-[464px] sm:min-w-[249px] mt-[-50px]  opacity-60"><img src={hero44} className="w-full h-full object-cover rounded-3xl" alt="" /></div>
+        <div className="B position-relative rounded-3xl  h-[464px] min-w-[249px] mt-[50px]  opacity-60"><img src={hero55} className="w-full h-full object-cover rounded-3xl" alt="" /></div>
+        <div className="A rounded-3xl  h-[464px] min-w-[249px] mt-[-50px]  opacity-60"><img src={hero44} className="w-full h-full object-cover rounded-3xl" alt="" /></div>
       </div>
     </div>
   );

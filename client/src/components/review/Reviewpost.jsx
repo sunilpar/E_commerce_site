@@ -23,7 +23,6 @@ function Reviewpost(ProductId) {
   const currentRating = watch("star");
 
   const submit = async (data) => {
-    data.star = data.star % 5;
     const dbPostReview = await reviewService.createReview({ ...data });
 
     if (dbPostReview) {
