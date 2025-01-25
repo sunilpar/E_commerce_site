@@ -78,13 +78,13 @@ var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
           <input value="Pay Through Esewa" className='py-4 px-6 rounded-lg  bg-[#60bb46] text-iphone-black  hover:bg-[#48873d] hover:text-iphone-black duration-300 hover:duration-300  text-3xl font-extrabold opacity-85 hover:opacity-80 ' type="submit"></input>
       </form>
         </div>}
-        {!isEmpty &&
+        {/* {!isEmpty &&
           <div className="mb-6">
         <button  className="py-4 px-6 rounded-lg  bg-iphone-black text-iphone-white hover:bg-iphone-white hover:text-iphone-black duration-300 hover:duration-300  text-3xl font-extrabold opacity-85 hover:opacity-80 ">
           Pay Through Khalti
         </button>
       </div>
-        }
+        } */}
       
   </>)
 }
