@@ -273,6 +273,34 @@ const searchPage = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, products, "Query fetched successfully"));
 });
 
+const relatedProduct = asyncHandler(async (req, res) => {
+  const Tags = req.body.Tags;
+
+  if (!Tags) {
+    throw new ApiError(400, "Query ie: Tags is required");
+  }
+
+  const tagsArray = Tags.split(" ");
+  const regexQuery = tagsArray.map(Tag => ({
+    Tags: { $regex: Tag, $options: "i" } 
+  }));
+  const products = await Product.collection.aggregate([
+    {
+      $match: { $or: regexQuery } 
+    },
+    {
+      $sample: { size: 24 } 
+    }
+  ]).toArray();
+
+  res
+    .status(200)
+    .json(new ApiResponse(200, products, "Query fetched successfully"));
+});
+
+
+
+
 
 
 export {
@@ -282,5 +310,6 @@ export {
   getProducts,
   searchSuggestion,
   searchPage,
-  getProductsWithId
+  getProductsWithId,
+  relatedProduct
 };

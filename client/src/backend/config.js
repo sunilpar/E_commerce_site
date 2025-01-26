@@ -90,6 +90,18 @@ export class Service {
       console.error("error while fetching products by ids:", error);
     }
   } 
+
+  async getProductsByTags(Tags) {
+    try {
+      const data = { 
+        Tags
+       };
+       
+      return await AxiosHelper("/api/product/get-realated-product", data, "post");
+    } catch (error) {
+      console.error("error while getting realated products:", error);
+    }
+  } 
   
 }
 

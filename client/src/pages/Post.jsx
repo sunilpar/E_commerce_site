@@ -10,6 +10,7 @@ import conf from "../conf/conf";
 import { addToCart } from "../store/cartSlice.js";
 import { Link } from "react-router-dom";
 import Review from "../components/review/Review.jsx";
+import RelatedProducts from "../components/search/RelatedProducts.jsx";
 
 function Post() {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ function Post() {
   const Pdf = post?.product.Pdf;
   const Audio = post?.product.Audio;
   const title = post?.product.Title;
+  const Tags = post?.product.Tags;
   const id = post?.product._id;
   const avgstar = post?.avgstar;
   let price=Pdf;
@@ -176,20 +178,7 @@ function Post() {
         <div  className=''>
 
         
-        <Product productTitles={["A Game of Thrones",
-                                   "A Clash of Kings",
-                                   "A Storm of Swords",
-                                   "A Feast for Crows",
-                                   "A Dance with Dragons",
-                                   "The Silmarillion",
-                                   "The Hobbit",
-                                   "The Fellowship of the Ring",
-                                   "The Two Towers",
-                                   "The Return of the King",
-                                   "Harry Potter and the Sorcerer's Stone",
-                                   "Harry Potter and the Chamber of Secrets",
-                                   "Harry Potter and the Prisoner of Azkaban",
-                                   "Harry Potter and the Goblet of Fire" ]} />
+        <RelatedProducts Tags={Tags}/>
         </div>
       </div>
 
