@@ -84,12 +84,12 @@ function Signup() {
                 required: true,
               })}
             />
-            <Input
+            {/* <Input
               label=" "
               type="select"
               placeholder="choose your avatar"
               {...register("avatar")}
-            />
+            /> */}
 
             <Button type="submit" className="w-full bg-iphone-black text-iphone-white hover:bg-iphone-white hover:text-iphone-black duration-150 hover:duration-150 ">
               Create Account
