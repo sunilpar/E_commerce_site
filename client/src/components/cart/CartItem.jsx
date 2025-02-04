@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button.jsx";
-import { clearOrder, removeOrder, addOrder } from "../../store/orderSlice.js";
+import { removeOrder, addOrder } from "../../store/orderSlice.js";
 import { removeFromCart } from "../../store/cartSlice.js";
 import { useSelector, useDispatch } from "react-redux";
 

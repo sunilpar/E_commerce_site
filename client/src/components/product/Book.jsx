@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../store/cartSlice.js";
-import { useSelector, useDispatch } from "react-redux";
-function Book({ Title, CoverImage, Pdf, Audio, _id }) {
+import {  useDispatch } from "react-redux";
+function Book({ Title, CoverImage, Pdf, _id }) {
   const id = _id;
   const dispatch = useDispatch();
   const handleCart = (id) => {

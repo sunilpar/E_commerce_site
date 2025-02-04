@@ -50,14 +50,14 @@ function Home() {
               <div className='flex flex-row justify-center gap-5 '>
                 <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105'>
                 <a  href="#fantasy-books">
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
+                    <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
                         className="absolute inset-0 h-fit w-fit object-cover "
                         src={fantasy}
                         alt=""
                       />
-                      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                      <h3 class="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                      <h3 className="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
                       Fantasy
                       </h3>
                     </article>
@@ -65,14 +65,14 @@ function Home() {
                 </div>
                 <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105'>
                 <a  href="#Romance-books">
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
+                    <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
                         className="absolute  h-[118px] w-[223px] object-cover  "
                         src={Romance}
                         alt=""
                       />
-                      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                      <h3 class="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                      <h3 className="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
                       Romance
                       </h3>
                     </article>
@@ -81,14 +81,14 @@ function Home() {
                 
                 <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105'>
                 <a  href="#Horror-books">
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
+                    <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
                         className="absolute  h-[142px] w-[235px] object-cover "
                         src={Horror}
                         alt=""
                       />
-                      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                      <h3 class="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                      <h3 className="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
                        Horror
                       </h3>
                     </article>
@@ -100,14 +100,14 @@ function Home() {
 
                 <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105'>
                 <a  href="#fiction-books">
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
+                    <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
                         className="absolute inset-0 h-[147px] w-[264px] object-cover "
                         src={fiction}
                         alt=""
                       />
-                      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                      <h3 class="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                      <h3 className="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
                        Science Fiction
                       </h3>
                     </article>
@@ -115,14 +115,14 @@ function Home() {
                 </div>
                 <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105'>
                 <a  href="#Manga-books">
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
+                    <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
                         className="absolute inset-[9px] h-[140px] w-[233px] object-cover "
                         src={Manga}
                         alt=""
                       />
-                      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                      <h3 class="z-10 mt-[-20px] text-3xl font-bold text-iphone-white text-left">
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                      <h3 className="z-10 mt-[-20px] text-3xl font-bold text-iphone-white text-left">
                       Manga & Comics
                       </h3>
                     </article>
@@ -130,14 +130,14 @@ function Home() {
                 </div>
                 <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105'>
                 <a  href="#History-books">
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
+                    <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
                         className="absolute inset-0 h-[157px] w-[279px] object-cover "
                         src={History}
                         alt=""
                       />
-                      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                      <h3 class="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                      <h3 className="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
                        History
                       </h3>
                     </article>
@@ -149,14 +149,14 @@ function Home() {
 
                 <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105'>
                 <a  href="#philosophy-books">
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
+                    <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
                         className="absolute inset-0 h-[148px] w-[243px] object-cover "
                         src={philosophy}
                         alt=""
                       />
-                      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                      <h3 class="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                      <h3 className="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
                         philosophy
                       </h3>
                     </article>
@@ -164,14 +164,14 @@ function Home() {
                 </div>
                 <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105'>
                 <a  href="#Biography-books">
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
+                    <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
                         className="absolute inset-0 h-[159px] w-[253px] object-cover "
                         src={Biography}
                         alt=""
                       />
-                      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                      <h3 class="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                      <h3 className="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
                         Biography
                       </h3>
                     </article>
@@ -179,14 +179,14 @@ function Home() {
                 </div>
                 <div className='bg-iphone-black opacity-70 hover:opacity-100 rounded-3xl h-[160px] w-[250px] hover:scale-105 overflow-hidden'>
                 <a  href="#kids-books">
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
+                    <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl p-4 pt-24 pb-8  max-w-sm mx-auto mt-1 hover:scale-105 ">
                       <img
                         className="absolute  h-[143px] w-[227px] object-cover "
                         src={kids}
                         alt=""
                       />
-                      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                      <h3 class="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                      <h3 className="z-10 mt-3 text-3xl font-bold text-iphone-white text-left">
                         kids
                       </h3>
                     </article>

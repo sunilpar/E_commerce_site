@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../store/cartSlice.js";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 function Searchbook({ Title, CoverImage, Pdf, Audio, _id }) {
   const id = _id;
   const dispatch = useDispatch();

@@ -3,7 +3,7 @@ import qs from "qs";
 
 
 const PaymentService = async ( price, uuid)=> {
-    if (!amount || !uuid) {
+    if (!price || !uuid) {
       console.log("Can't make API call without amt and uuid");
       return;
     }

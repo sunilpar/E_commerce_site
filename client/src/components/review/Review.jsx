@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import reviewService from "../../backend/review";
 import Reviewpost from "./Reviewpost";
-
-import { Link } from "react-router-dom";
-import Button from "../Button";
-import { use } from "react";
-
 function Review({ id }) {
   const [review, setReview] = useState([]);
   useEffect(() => {

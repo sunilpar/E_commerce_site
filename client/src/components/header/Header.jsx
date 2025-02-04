@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Button, Container, LogoutBtn } from "../index";
+import React from "react";
+import { Container } from "../index";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/book_logo.png";
 import conf from "../../conf/conf";

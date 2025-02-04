@@ -1,5 +1,4 @@
 import React from "react";
-import Product from "../components/product/Product.jsx"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -39,7 +38,6 @@ function Post() {
   const Tags = post?.product.Tags;
   const id = post?.product._id;
   const avgstar = post?.avgstar;
-  let price=Pdf;
 
   
   const [selectedOption, setSelectedOption] = useState('Audio book');
