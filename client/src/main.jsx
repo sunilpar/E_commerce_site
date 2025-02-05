@@ -8,7 +8,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { Login } from "./components/index.js";
 import Signup from "./components/Signup.jsx";
-import ProductForm from "./components/productform/Productform.jsx";
+import ProductForm from "./components/index.js";
 import Home from "./pages/Home.jsx";
 import Cart from "./pages/Cart.jsx";
 import Post from "./pages/Post.jsx";

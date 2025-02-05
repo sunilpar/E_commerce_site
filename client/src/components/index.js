@@ -6,7 +6,7 @@ import Button from "./Button"
 import Input from "./Input"
 import LogoutBtn from "./header/Logoutbtn"
 import Footer from "./footer/Footer"
-import ProductForm from "./productform/Productform"
+import ProductForm from "./productform/ProductForm"
 import AuthLayout from "./AuthLayout"
 import Select from "./search/Select"
 
