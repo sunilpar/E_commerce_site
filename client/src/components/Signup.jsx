@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import authService from "../backend/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../store/authSlice";
+import { login } from "../store/authslice";
 import { Button, Input } from "./index.js";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
