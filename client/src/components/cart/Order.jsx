@@ -63,7 +63,7 @@ var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
         </table>
       </div>
       {!isEmpty && <div className="mb-6">
-        <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">
+        <form target='_blank' action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">
           <input type="hidden" id="amount" name="amount" value={price} required></input>
           <input type="hidden" id="tax_amount" name="tax_amount" value ="0" required></input>
           <input type="hidden" id="total_amount" name="total_amount" value={price} required></input>

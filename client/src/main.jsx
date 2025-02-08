@@ -6,15 +6,15 @@ import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { Login } from "./components/index.js";
+import Login from "./components/Login.jsx";
 import Signup from "./components/Signup.jsx";
-import ProductForm from "./components/index.js";
+import ProductForm from "./components/productform/ProductForm.jsx";
 import Home from "./pages/Home.jsx";
 import Cart from "./pages/Cart.jsx";
 import Post from "./pages/Post.jsx";
 import Search from "./pages/Search.jsx";
 import Sucess from "./pages/Sucess.jsx";
-import Failure from "./pages/Failure.jsx";
+import Failure from "./pages/Failure.jsx"; 
 import KhaltiPayment from "./pages/KhaltiPayment.jsx";
 
 //test
