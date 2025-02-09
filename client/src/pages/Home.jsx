@@ -3,7 +3,7 @@ import Hero from '../components/header/Hero'
 import Product from '../components/product/Product'
 //pngs
 import fiction from '../assets/Fiction.png'
-import fantasy from '../assets/Fantasy.png'
+import fantasy from '../assets/fantasy.png'
 import Romance from '../assets/Romance.png'
 import philosophy from '../assets/Philosophy.png'
 import kids from '../assets/kids.png'
