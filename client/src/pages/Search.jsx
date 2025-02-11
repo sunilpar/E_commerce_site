@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Searchbook from "../components/search/Searchbook";
-import service from "../backend/config";
+import Searchbook from "../components/search/Searchbook.jsx";
+import service from "../backend/config.js";
 import { useParams } from "react-router-dom";
 
 function Search() {

@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Button, Input } from "../index";
-import service from "../../backend/config";
+import { Button, Input } from "../index.js";
+import service from "../../backend/config.js";
 
 export default function ProductForm() {
   const { register, handleSubmit } = useForm({

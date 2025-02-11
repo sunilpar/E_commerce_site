@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../Button";
+import Button from "../Button.jsx";
 import { Link } from "react-router-dom";
 // import Searchsuggestion from "./Searchsuggestion";
 function Searchbar() {

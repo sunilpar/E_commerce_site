@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProductForm } from '../components'
+import  ProductForm  from '../components/productform/ProductForm.jsx'
 
 function AdminProduct() {
   return (

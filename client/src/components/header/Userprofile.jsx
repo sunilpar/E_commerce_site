@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import Logoutbtn from "./Logoutbtn";
+import Logoutbtn from "./Logoutbtn.jsx";
 
 function Userprofile() {
   const userData = useSelector((state) => state.auth.userData);

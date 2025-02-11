@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import authService from "../../backend/auth";
-import { logout } from "../../store/authslice";
+import authService from "../../backend/auth.js";
+import { logout } from "../../store/authslice.js";
 import { useNavigate } from "react-router-dom";
 
 function LogoutBtn() {

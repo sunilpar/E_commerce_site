@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
-import { login as authLogin } from '../store/authslice'
-import {Button, Input} from "./index"
+import { login as authLogin } from '../store/authslice.js'
+import {Button, Input} from "./index.js"
 import {useDispatch} from "react-redux"
-import authService from "../backend/auth"
+import authService from "../backend/auth.js"
 import {useForm} from "react-hook-form"
 
 function Login() {

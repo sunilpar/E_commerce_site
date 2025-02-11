@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import reviewService from "../../backend/review";
-import Reviewpost from "./Reviewpost";
+import reviewService from "../../backend/review.js";
+import Reviewpost from "./Reviewpost.jsx";
 function Review({ id }) {
   const [review, setReview] = useState([]);
   useEffect(() => {

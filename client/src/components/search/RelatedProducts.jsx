@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
-import Searchbook from './Searchbook'
-import service from '../../backend/config';
+import Searchbook from './Searchbook.jsx'
+import service from '../../backend/config.js';
 
 function RelatedProducts({Tags}) {
     const [product, setProduct] = useState([]);

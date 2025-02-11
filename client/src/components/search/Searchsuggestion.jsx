@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import service from '../../backend/config';
+import service from '../../backend/config.js';
 
 function Searchsuggestion({query}) {    
     const [product, setProduct] = useState([]);

@@ -7,7 +7,7 @@ import logo from "../../assets/book_logo.png";
 import conf from "../../conf/conf";
 import Searchbar from "../search/Searchbar.jsx";
 import { useMediaQuery } from "react-responsive";
-import Userprofile from "./userprofile.jsx";
+import Userprofile from "./Userprofile.jsx";
 
 
 

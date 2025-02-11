@@ -1,6 +1,6 @@
 import React from 'react'
-import Hero from '../components/header/Hero'
-import Product from '../components/product/Product'
+import Hero from '../components/header/Hero.jsx'
+import Product from '../components/product/Product.jsx'
 //pngs
 import fiction from '../assets/Fiction.png'
 import fantasy from '../assets/fantasy.png'

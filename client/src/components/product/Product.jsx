@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import service from "../../backend/config";
-import Book from "./Book";
+import service from "../../backend/config.js";
+import Book from "./Book.jsx";
 
 function Product({ productTitles }) {
   const [product, setProduct] = useState([]);
