@@ -16,8 +16,12 @@ function Login() {
         setError("")
         try {
             const session = await authService.login(data)
+            console.log("the data from login ",session);
+            
             if (session) {
                 const userData = await authService.getCurrentUser()
+                console.log("the data of user from api call ",userData);
+                
                 if(userData) dispatch(authLogin(userData));
                 navigate("/")
                 location.reload()

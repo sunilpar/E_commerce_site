@@ -1,5 +1,6 @@
 import AxiosHelper from "../utils/axios.helper.js";
 
+const apiUrl = import.meta.env.VITE_API_URL;
 export class ReviewService{
 
     async createReview({ProductId, star, Comment}) {//test this
@@ -9,7 +10,7 @@ export class ReviewService{
             star,
             Comment
            };
-          return await AxiosHelper("/api/review/post-review", data, "post");
+          return await AxiosHelper(`${apiUrl}/review/post-review`, data, "post");
         } catch (error) {
           console.error("error while creating review:", error);
         }
@@ -21,7 +22,7 @@ export class ReviewService{
           const data = {
             ProductId
           };
-           return await AxiosHelper("/api/review/get-reviews", data, "post");
+           return await AxiosHelper(`${apiUrl}/review/get-reviews`, data, "post");
         } catch (error) {
           console.error("Error fetching user:", error);
         }

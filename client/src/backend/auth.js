@@ -1,5 +1,7 @@
 import AxiosHelper from "../utils/axios.helper.js";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export class AuthService {
 
   async createAccount({email, password, name, avatar}) {
@@ -10,7 +12,7 @@ export class AuthService {
         Password: password,
         Avatar: avatar
        };
-      return await AxiosHelper("/api/user/register", data, "post");
+      return await AxiosHelper(`${apiUrl}/user/register`, data, "post");
     } catch (error) {
       console.error("error while creating user:", error);
     }
@@ -23,7 +25,7 @@ export class AuthService {
         Email: email,
         Password: password
        };
-      return await AxiosHelper("/api/user/login", data, "post");
+      return await AxiosHelper(`${apiUrl}/user/login`, data, "post");
     } catch (error) {
       console.error("error while logging in:", error);
     }
@@ -33,7 +35,7 @@ export class AuthService {
   async getCurrentUser(){
     try {
       const data = {};
-       return await AxiosHelper("/api/user/current-user", data, "get");
+       return await AxiosHelper(`${apiUrl}/user/current-user`, data, "get");
     } catch (error) {
       console.error("Error fetching user:", error);
     }
@@ -45,7 +47,7 @@ export class AuthService {
       const data = { 
 
        };
-       return await AxiosHelper("/api/user/logout", data, "post");
+       return await AxiosHelper(`${apiUrl}/user/logout`, data, "post");
     } catch (error) {
       console.error("Error while logging out user:", error);
     }

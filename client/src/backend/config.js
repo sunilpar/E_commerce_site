@@ -1,4 +1,5 @@
 import AxiosHelper from "../utils/axios.helper.js";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export class Service {
   async createProduct({Title,CoverImage, Description, Pdf ,Audio,Tags, }) {
@@ -11,7 +12,7 @@ export class Service {
         Audio,
         Tags
        };
-      return await AxiosHelper("/api/product/create-product", data, "post");
+      return await AxiosHelper(`${apiUrl}/product/create-product`, data, "post");
     } catch (error) {
       console.error("error while creating product:", error);
     }
@@ -28,7 +29,7 @@ export class Service {
         Audio,
         Tags
        };
-      return await AxiosHelper("/api/product/update-product", data, "post");
+      return await AxiosHelper(`${apiUrl}/product/update-product`, data, "post");
     } catch (error) {
       console.error("error while updating product :", error);
     }
@@ -40,7 +41,7 @@ export class Service {
       const data = { 
         id:Product_Id
        };
-      return await AxiosHelper("/api/product/get-product", data, "post");
+      return await AxiosHelper(`${apiUrl}/product/get-product`, data, "post");
     } catch (error) {
       console.error("error while fetching product :", error);
     }
@@ -51,7 +52,7 @@ export class Service {
       const data = { 
         Titles
        };
-      return await AxiosHelper("/api/product/get-products", data, "post");
+      return await AxiosHelper(`${apiUrl}/product/get-products`, data, "post");
     } catch (error) {
       console.error("error while fetching products by titles :", error);
     }
@@ -62,7 +63,7 @@ export class Service {
       const data = { 
         query
        };
-      return await AxiosHelper("/api/product/get-suggestions", data, "post");
+      return await AxiosHelper(`${apiUrl}/product/get-suggestions`, data, "post");
     } catch (error) {
       console.error("error while searching products from given query :",query,"error:", error);
     }
@@ -72,7 +73,7 @@ export class Service {
       const data = { 
         query
        };
-      return await AxiosHelper("/api/product/get-searchpage", data, "post");
+      return await AxiosHelper(`${apiUrl}/product/get-searchpage`, data, "post");
     } catch (error) {
       console.error("error while searching products page from:",query,"error:", error);
     }
@@ -85,7 +86,7 @@ export class Service {
         ids
        };
        
-      return await AxiosHelper("/api/product/get-Byids", data, "post");
+      return await AxiosHelper(`${apiUrl}/product/get-Byids`, data, "post");
     } catch (error) {
       console.error("error while fetching products by ids:", error);
     }
@@ -97,7 +98,7 @@ export class Service {
         Tags
        };
        
-      return await AxiosHelper("/api/product/get-realated-product", data, "post");
+      return await AxiosHelper(`${apiUrl}/product/get-realated-product`, data, "post");
     } catch (error) {
       console.error("error while getting realated products:", error);
     }
